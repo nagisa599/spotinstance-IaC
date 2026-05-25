@@ -262,7 +262,7 @@ By analyzing these metrics by local time of day, region, and instance type, this
 
 \subsection{Experimental Methods}
 
-In this experiment, we implement the proposed measurement framework using AWS cloud services. Figure \ref{fig:system_architecture} shows the system architecture. Amazon EventBridge Scheduler periodically invokes AWS Lambda, which controls spot instance launch, status retrieval, and termination. AWS Lambda records the launch result of each spot instance request and periodically retrieves the status of running instances. The collected information, including launch success or failure, runtime, interruption status, and termination time, is stored in Amazon DynamoDB.
+In this experiment, we implement the proposed measurement framework using AWS cloud services. Amazon EventBridge Scheduler periodically invokes AWS Lambda, which controls spot instance launch, status retrieval, and termination. AWS Lambda records the launch result of each spot instance request and periodically retrieves the status of running instances. The collected information, including launch success or failure, runtime, interruption status, and termination time, is stored in Amazon DynamoDB.
 
 This architecture enables us to analyze both spot capacity availability at launch time and runtime continuity after launch. The launch success rate is used to evaluate whether a spot request can be fulfilled, whereas the interruption-before-deadline rate, deadline-conditioned completion feasibility, and observed availability duration are used to evaluate whether a successfully launched instance remains available until a given short-running workload deadline.
 
@@ -290,12 +290,6 @@ The experiment was conducted from August 27, 2025, to September 3, 2025. Because
 % 収集した情報に基づき，時間帯，リージョン，およびインスタンスタイプの各組み合わせについて，起動成功率，5分，10分，30分，60分に対する interruption-before-deadline rate，各期限に対する deadline-conditioned completion feasibility，および observed availability duration を算出する．interruption-before-deadline rate と deadline-conditioned completion feasibility は，起動に成功したインスタンスのみを対象として算出する．一方，起動成功率は，すべてのスポットインスタンス起動リクエストを対象として算出する．このように分けて分析することで，起動時点のスポット容量不足による失敗と，インスタンス起動後に発生する中断とを区別できる．
 
 % 本実験は，2025年8月27日から2025年9月3日まで実施した．観測期間は1週間に限定されているため，得られた結果はスポット容量の短期的な変動の影響を受けている可能性があり，長期的，週次的，または季節的な傾向を完全に表すものではない．さらに，各リージョンとインスタンスタイプの組み合わせごとに，1時間に1台のみスポットインスタンスを起動しているため，各時間帯におけるサンプル数は限られている．したがって，本実験の結果は，普遍的に一般化可能な中断傾向としてではなく，設定した実験条件下における予備的な実測観測として解釈すべきである．
-
-\begin{figure}[t]
-\includegraphics[width=\textwidth]{images/図2.png}
-\caption{System architecture of the experiment}
-\label{fig:system_architecture}
-\end{figure}
 
 \begin{table}[t]
 \caption{Instance types used in this study}
