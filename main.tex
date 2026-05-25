@@ -342,36 +342,59 @@ For each instance, the collected record includes the requested region, instance 
 % 各インスタンスの稼働時間は，running 状態に入った時刻から，中断または終了した時刻までとして計算する．
 % 収集したデータは，ローカル時間帯，リージョン，インスタンスタイプごとに集計し，定義した指標の算出に用いる．
 
-\section{Planned Analysis}
+\section{Results}
 
-The main analysis focuses on whether time of day can be used as an operational indicator for short-running workload execution on spot instances. First, we compare launch success rates by local time of day to examine whether spot capacity can be obtained more easily during certain time periods. Second, for successfully launched instances, we compare interruption-before-deadline rates and deadline-conditioned completion feasibility for 5, 10, 30, and 60 minutes. This analysis clarifies whether instances launched in certain time periods are more likely to remain available long enough for short-running workloads to complete.
+\subsection{Overview}
 
-The results are analyzed separately by region and instance type. Regional analysis allows us to examine whether time-of-day tendencies differ across geographical locations. Instance-type analysis allows us to examine whether resource characteristics, such as compute-oriented, GPU-based, or lightweight instances, affect short-workload completion feasibility. In addition, heatmaps can be used to visualize differences in deadline-conditioned completion feasibility across local time periods, regions, and instance types.
+Over the observation period, a total of $N_{\mathrm{req}} = 1{,}929$ spot instance launch requests were submitted across four regions and three instance types. Of these, $N_{\mathrm{succ}} = 1{,}866$ instances were successfully launched, yielding an overall launch success rate of $R_{\mathrm{launch}} = 96.7\%$. Among the successfully launched instances, 113 ($6.1\%$) were interrupted before the end of the one-hour observation window.
 
-Because the observation period is limited to one week and the number of samples for each time period is small, this study does not aim to make universal claims about all AWS Spot Instance markets. Instead, the goal is to demonstrate a measurement approach and to provide preliminary evidence that time of day can be considered as an operational factor when using spot instances for short-running workloads.
+Figure~\ref{fig:heatmap_fcomp60} shows $F_{\mathrm{comp}}(60)$ aggregated by local time period, region, and instance type. The t3.micro instance type achieved $F_{\mathrm{comp}}(60) \geq 0.95$ across all regions and time periods, indicating that lightweight instances are relatively robust to interruption regardless of execution timing. In contrast, c6a.large and g4dn.xlarge exhibited larger time-period variation, with values ranging from approximately 0.65 to 1.00. This suggests that time of day is more operationally relevant for compute-oriented and GPU-based instance types.
 
-% 日本語要約：
-% 主な分析では，時間帯がスポットインスタンス上で短時間ワークロードを実行するための運用上の指標になり得るかを検討する．
-% まず，ローカル時間帯ごとの起動成功率を比較し，特定の時間帯にスポット容量を確保しやすいかを確認する．
-% 次に，起動に成功したインスタンスについて，5分，10分，30分，60分の interruption-before-deadline rate と deadline-conditioned completion feasibility を比較する．
-% リージョン別分析により地理的な違いを確認し，インスタンスタイプ別分析によりリソース特性の違いを確認する．
-% 観測期間が1週間に限られるため，本研究は普遍的な傾向を主張するのではなく，時間帯を短時間ワークロード実行の運用上の要因として扱う測定アプローチを示すことを目的とする．
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{figure1_fcomp60_heatmap.png}
+\caption{$F_{\mathrm{comp}}(60)$ heatmap by local time period, region, and instance type. Annotations show the value and sample counts ($n_{\mathrm{comp}}/n_{\mathrm{succ}}$).}
+\label{fig:heatmap_fcomp60}
+\end{figure}
+
+\subsection{Time-of-Day Effects on Deadline-Conditioned Completion Feasibility}
+
+Figure~\ref{fig:fcomp_multiregion} shows $F_{\mathrm{comp}}(d)$ for $d \in \{5, 10, 30, 60\}$ minutes for the four region--instance-type combinations with the largest observed time-period variation in $F_{\mathrm{comp}}(60)$.
+
+In panel~(a), N.~Virginia c6a.large, the Night period achieved $F_{\mathrm{comp}}(60) = 0.97$, whereas the Morning period fell to $F_{\mathrm{comp}}(60) = 0.68$, a difference of approximately 0.30. Even at the shortest deadline of $d = 5$ minutes, the Morning period already showed $F_{\mathrm{comp}}(5) = 0.88$, indicating that interruption risk begins to accumulate within the first five minutes. The Night and Evening periods maintained $F_{\mathrm{comp}}(d) \geq 0.93$ across all deadlines.
+
+Panel~(b), Ireland c6a.large, shows a qualitatively similar pattern. The Night period achieved $F_{\mathrm{comp}}(60) = 1.00$ for all deadlines, while the Morning period dropped to $F_{\mathrm{comp}}(60) = 0.76$ and the Afternoon to $0.87$. These results suggest that c6a.large instances in both N.~Virginia and Ireland are more susceptible to interruption during daytime hours.
+
+For g4dn.xlarge in Tokyo (panel~(c)), the Morning period showed the largest degradation with $F_{\mathrm{comp}}(60) = 0.77$, while the Night and Evening periods reached $F_{\mathrm{comp}}(60) = 1.00$. In Singapore (panel~(d)), the Afternoon period exhibited the lowest $F_{\mathrm{comp}}(60) = 0.77$, whereas the Morning was also reduced at $0.88$ compared to Night at $0.95$.
+
+Across all four panels, the Night period consistently achieved the highest or near-highest $F_{\mathrm{comp}}(d)$ values, while the Morning or Afternoon period was associated with the greatest interruption risk depending on the region. These observations provide preliminary evidence that time of day can serve as an operationally meaningful indicator for scheduling short-running workloads on spot instances.
+
+\begin{figure}[t]
+\includegraphics[width=\textwidth]{figure2_fcomp_multiregion.png}
+\caption{$F_{\mathrm{comp}}(d)$ for the four region--instance-type combinations with the largest time-period variation. Lines represent local time periods; the x-axis uses a logarithmic scale.}
+\label{fig:fcomp_multiregion}
+\end{figure}
 
 \section{Discussion}
 
-This study emphasizes the distinction between launch-time availability and runtime continuity. Provider-specific indicators such as SPS are useful for selecting spot markets where requests are likely to be fulfilled. However, for short-running workloads, a successful launch is only the first requirement. The instance must also remain available until the workload-specific deadline. Therefore, deadline-conditioned completion feasibility provides a workload-oriented perspective that complements infrastructure-level availability indicators.
+\subsection{Time-of-Day as an Operational Scheduling Factor}
 
-The time-of-day perspective is particularly important for workloads whose execution time can be scheduled flexibly. If the observed completion feasibility differs across local time periods, users may be able to reduce interruption risk by scheduling CI/CD jobs, automated tests, or short batch-processing tasks during time periods with higher completion feasibility. This does not replace SPS or other provider-specific indicators; rather, it provides an additional directly observed signal that is easier to interpret from the viewpoint of workload execution.
+The results show that $F_{\mathrm{comp}}(d)$ varies substantially by local time period for compute-oriented and GPU-based instance types, while remaining largely stable for t3.micro. The most pronounced differences were observed in N.~Virginia for c6a.large, where the Night period achieved $F_{\mathrm{comp}}(60) = 0.97$ compared to $0.68$ in the Morning—a gap of approximately 0.30. A similar contrast appeared in Ireland ($1.00$ vs.\ $0.76$) and Tokyo g4dn.xlarge ($1.00$ vs.\ $0.77$). These findings suggest that, for workloads with flexible execution timing, selecting the Night period (00:00–05:59 local time) can substantially reduce the risk of interruption before the workload deadline.
 
-There are several limitations. First, this study uses uninterrupted instance availability as a proxy for workload completion feasibility and does not execute actual application workloads. Therefore, application-level failures, performance variability, and workload-specific dependencies are outside the scope of this study. Second, the observation period is limited to one week, and only one instance is launched every hour for each combination of region and instance type. As a result, the sample size is limited, and the results should be interpreted as preliminary observations. Third, this study focuses on AWS Spot Instances and does not directly evaluate other cloud providers. Future work should extend the observation period, increase the number of samples, include actual workloads, and compare the proposed metrics with SPS and other provider-specific indicators.
+The observed pattern is consistent with the hypothesis that local cloud demand follows a diurnal cycle. During local nighttime hours, business-driven demand for compute and GPU capacity is likely lower, leaving more spare capacity available for spot instances. Conversely, the Morning or Afternoon periods—corresponding to the start of local business hours—appear to be associated with increased spot market competition and higher interruption rates. The regional difference in which period is riskiest further supports this interpretation: N.~Virginia and Ireland show Morning as the riskiest period, which aligns with the start of the North American and European business day; Singapore shows Afternoon as riskiest, consistent with peak activity during Asian afternoon hours.
 
-% 日本語要約：
-% 本研究では，起動時点の可用性と起動後の継続利用可能性を区別することを重視する．
-% SPS はスポットリクエストが成立しやすい市場を選択する上では有用であるが，短時間ワークロードでは，起動成功だけでなく，ワークロード期限までインスタンスが利用可能であり続けることが必要である．
-% そのため，deadline-conditioned completion feasibility は，インフラレベルの可用性指標を補完するワークロード指向の観点を提供する．
-% 時間帯によって完了可能性が異なる場合，CI/CD や短時間バッチ処理をより中断リスクの低い時間帯に実行するという運用戦略が考えられる．
-% 一方で，本研究は実際のアプリケーションワークロードを実行しておらず，観測期間も1週間に限られるため，結果は予備的な観測として解釈する必要がある．
-% 今後は，観測期間の延長，サンプル数の増加，実ワークロードの導入，SPS との比較が必要である．
+\subsection{Instance Type and Interruption Susceptibility}
+
+The observed robustness of t3.micro ($F_{\mathrm{comp}}(60) \geq 0.95$ in all conditions) contrasts with the higher interruption susceptibility of c6a.large and g4dn.xlarge. This difference may be attributed to the relative demand for each instance type in the spot market. Burstable lightweight instances such as t3.micro are likely to face less competition for spare capacity, whereas compute-optimized and GPU-accelerated instances are in higher demand for machine learning and batch workloads. This is consistent with the findings of Lee et al.~\cite{Lee2022SpotLake}, who reported that GPU instances and large instance types tend to have lower spot availability. Our results extend this finding to the deadline-conditioned perspective: not only are GPU and compute instances more likely to be interrupted, but their interruption risk varies more strongly with time of day than that of lightweight instances.
+
+\subsection{Implications for Workload Scheduling}
+
+These preliminary observations have direct implications for practitioners who use spot instances for short-running workloads with flexible scheduling. For c6a.large or g4dn.xlarge instances in regions such as N.~Virginia, Ireland, or Tokyo, scheduling CI/CD jobs or batch-processing tasks during the Night period can increase $F_{\mathrm{comp}}(60)$ by up to 0.30 compared to the Morning period, without requiring any changes to the workload itself or any provider-specific API calls. Since $F_{\mathrm{comp}}(d)$ is derived solely from directly observed launch and interruption records, this approach provides a transparent and interpretable scheduling signal that complements opaque provider indicators such as SPS.
+
+It should be noted that the riskiest time period differs by region: Morning in N.~Virginia, Ireland, and Tokyo, but Afternoon in Singapore. Users should therefore derive $F_{\mathrm{comp}}(d)$ from their own observed data in the target region rather than applying a single universal rule.
+
+\subsection{Limitations}
+
+Several limitations must be acknowledged. First, the observation period is limited to one week, and the sample size per time period is approximately 30–42 instances per region--instance-type combination. The results may therefore reflect short-term fluctuations in spot capacity and should not be generalized as long-term or seasonal trends. Second, this study uses uninterrupted instance availability as a proxy for workload completion feasibility and does not execute actual application-level workloads. Application-specific factors such as checkpointing, startup overhead, and inter-job dependencies are outside the scope of this study. Third, only one instance was launched per hour for each combination, so concurrent-launch effects and queue behavior under high demand are not captured. Fourth, no maximum spot price was specified, so the results reflect behavior under the default AWS pricing configuration only. Future work should address these limitations by extending the observation period, increasing the sampling frequency, running actual CI/CD workloads, and comparing $F_{\mathrm{comp}}(d)$ against SPS and other provider-specific indicators.
 
 \section{Conclusion}
 
