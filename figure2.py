@@ -139,8 +139,7 @@ for idx, (ax, panel) in enumerate(zip(axes_flat, PANELS)):
     ax.yaxis.set_major_locator(ticker.MultipleLocator(0.05))
     ax.tick_params(axis="both", labelsize=10)
 
-    if idx >= 2:
-        ax.set_xlabel("Workload deadline (min)", fontsize=11)
+    ax.set_xlabel("Workload deadline (min)", fontsize=11)
     ax.set_ylabel(r"$F_\mathrm{comp}(d)$", fontsize=12)
 
 # Shared legend

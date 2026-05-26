@@ -41,7 +41,7 @@
 \begin{abstract}
 Spot instances offer significant cost savings. However, they may be interrupted before a short-running workload—such as a CI/CD job or batch-processing task—completes. Existing indicators such as Spot Placement Score (SPS) assess launch-time availability. However, they do not directly capture whether a successfully launched instance will remain available until a workload-specific deadline.
 
-We present a time-of-day-aware empirical measurement framework that periodically launches spot instances across four AWS regions and three instance types, and evaluates deadline-conditioned completion feasibility $F_{\mathrm{comp}}(d)$—the fraction of successfully launched instances that are not interrupted before workload deadline $d$—for deadlines of 5, 10, 30, and 60 minutes. Over a one-week observation period, launch success rates were high overall, while a small fraction of launched instances were interrupted before the end of the observation window.
+To characterize this risk, we define deadline-conditioned completion feasibility $F_{\mathrm{comp}}(d)$—the fraction of successfully launched instances that remain uninterrupted until workload deadline $d$—and empirically measure it across four AWS regions and three instance types over one week, for deadlines of 5, 10, 30, and 60 minutes. Launch success rates were high overall, while a small fraction of instances were interrupted before the observation window ended.
 
 $F_{\mathrm{comp}}(d)$ varied substantially by local time period for compute-oriented and GPU-based instance types. The largest difference was observed for c6a.large in N.~Virginia, where the Night period achieved markedly higher completion feasibility than the Morning period. Similar patterns appeared in Ireland and Tokyo. By contrast, t3.micro remained stable across all conditions. These results provide preliminary evidence that local time of day can serve as an operationally meaningful, directly observable scheduling factor for short-running workloads on spot instances.
 
@@ -182,7 +182,7 @@ This metric represents the fraction of successfully launched instances that rema
 By analyzing these metrics by local time of day, region, and instance type, this study aims to clarify the conditions under which spot instances are more likely to be launched successfully and remain available long enough for short-running workloads to complete. Based on the obtained results, we discuss a spot instance usage strategy that considers time periods, regions, and instance types with relatively higher short-workload completion feasibility.
 
 \begin{figure}[t]
-\includegraphics[width=\textwidth]{images/図1.png}
+\includegraphics[width=\textwidth]{images/artect.png}
 \caption{Proposed measurement framework}
 \label{fig:measurement_framework}
 \end{figure}
@@ -342,7 +342,7 @@ Several limitations must be acknowledged. First, the observation period is limit
 % 本研究にはいくつかの限界がある。第一に，観測期間は1週間に限定されており，各時間帯におけるサンプル数はリージョン・インスタンスタイプの組み合わせごとに約 30--42 インスタンスである。そのため，結果はスポット容量の短期的な変動を反映している可能性があり，長期的または季節的な傾向として一般化すべきではない。第二に，本研究では，指定された期限までインスタンスが中断されずに利用可能であることをワークロード完了可能性の proxy として用いており，実際のアプリケーションレベルのワークロードは実行していない。そのため，checkpointing，startup overhead，ジョブ間依存関係といったアプリケーション固有の要因は本研究の対象外である。第三に，各組み合わせについて1時間に1台のみインスタンスを起動しているため，高需要時における同時起動の影響やキュー挙動は捉えられていない。第四に，本研究では最大スポット価格を指定していないため，得られた結果は AWS のデフォルトのスポット価格設定における挙動のみを反映している。今後の研究では，観測期間の延長，サンプリング頻度の増加，実際の CI/CD ワークロードの実行，および $F_{\mathrm{comp}}(d)$ と SPS やその他のプロバイダ固有指標との比較を行う必要がある。
 \section{Conclusion}
 
-This paper presented a time-of-day-aware empirical measurement framework for evaluating the completion feasibility of short-running workloads on AWS Spot Instances. Unlike approaches that focus only on launch-time availability or infrastructure-level survival time, this study reformulated spot instance reliability as deadline-conditioned completion feasibility for workload deadlines of 5, 10, 30, and 60 minutes. The proposed framework separately records launch success and runtime interruption behavior across multiple regions and instance types.
+This paper defined deadline-conditioned completion feasibility $F_{\mathrm{comp}}(d)$ as a time-of-day-aware metric and empirically measured it across four AWS regions and three instance types to evaluate the completion feasibility of short-running workloads on spot instances. Unlike indicators that address only launch-time availability or infrastructure-level survival time, $F_{\mathrm{comp}}(d)$ captures post-launch runtime continuity for workload-specific deadlines of 5, 10, 30, and 60 minutes, with launch success and interruption behavior recorded separately.
 
 The main idea of this study is to treat time of day as an operational variable for deciding when to execute short-running workloads on spot instances. By analyzing launch success rate, interruption-before-deadline rate, deadline-conditioned completion feasibility, and observed availability duration by local time of day, region, and instance type, the proposed approach supports a more interpretable spot instance usage strategy based on directly observed completion behavior. Future work will extend the measurement period, increase the sample size, evaluate actual CI/CD and batch-processing workloads, and compare the observed completion feasibility with provider-specific indicators such as SPS.
 
@@ -356,6 +356,7 @@ The main idea of this study is to treat time of day as an operational variable f
 % ---- Bibliography ----
 %
 \begin{thebibliography}{9}
+\raggedright
 
 \bibitem{AWSSpot}
 Amazon Web Services:
