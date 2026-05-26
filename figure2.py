@@ -8,6 +8,8 @@ import numpy as np
 
 DATA_DIR = "data"
 DEADLINES = [5, 10, 30, 60]
+DATE_START = "2026-05-19T00:00:00Z"
+DATE_END   = "2026-05-26T00:00:00Z"
 
 # Top-4 combinations by time-period spread in F_comp(60)
 PANELS = [
@@ -41,6 +43,7 @@ def classify_period(h):
 # ── Load & filter ─────────────────────────────────────────────────────────────
 dfs = [pd.read_csv(f) for f in glob.glob(f"{DATA_DIR}/*.csv")]
 df = pd.concat(dfs, ignore_index=True)
+df = df[(df["timestamp"] >= DATE_START) & (df["timestamp"] < DATE_END)].reset_index(drop=True)
 df = df[~df["launch_failed"].astype(bool)].reset_index(drop=True)
 df["interrupted"] = df["interrupted"].astype(bool)
 
@@ -163,6 +166,6 @@ fig.suptitle(
     y=1.01,
 )
 
-plt.savefig("figure2_fcomp_multiregion.png", dpi=180, bbox_inches="tight")
+plt.savefig("images/figure2_fcomp_multiregion.png", dpi=180, bbox_inches="tight")
 plt.show()
-print("Saved: figure2_fcomp_multiregion.png")
+print("Saved: images/figure2_fcomp_multiregion.png")

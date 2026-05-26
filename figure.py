@@ -7,6 +7,8 @@ import seaborn as sns
 
 DATA_DIR = "data"
 T_MINUTES = 60
+DATE_START = "2026-05-19T00:00:00Z"
+DATE_END   = "2026-05-26T00:00:00Z"
 
 REGION_TZ = {
     "ap-northeast-1": ZoneInfo("Asia/Tokyo"),
@@ -37,6 +39,8 @@ def classify_period(local_hour: int) -> str:
 # ── Load & filter ────────────────────────────────────────────────────────────
 dfs = [pd.read_csv(f) for f in glob.glob(f"{DATA_DIR}/*.csv")]
 df = pd.concat(dfs, ignore_index=True)
+
+df = df[(df["timestamp"] >= DATE_START) & (df["timestamp"] < DATE_END)].reset_index(drop=True)
 
 # F_comp is defined only over successfully launched instances (N_succ)
 df = df[~df["launch_failed"].astype(bool)].reset_index(drop=True)
@@ -120,6 +124,6 @@ for i in range(1, len(region_order)):
     ax.axvline(x=i * len(instance_order), color="black", linewidth=1.5)
 
 plt.tight_layout()
-plt.savefig("figure1_fcomp60_heatmap.png", dpi=150, bbox_inches="tight")
+plt.savefig("images/figure1_fcomp60_heatmap.png", dpi=150, bbox_inches="tight")
 plt.show()
-print("Saved: figure1_fcomp60_heatmap.png")
+print("Saved: images/figure1_fcomp60_heatmap.png")
