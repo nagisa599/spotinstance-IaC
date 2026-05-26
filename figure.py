@@ -110,11 +110,6 @@ sns.heatmap(
     cbar_kws={"label": f"F_comp({T_MINUTES}) — P(no interruption in {T_MINUTES} min)"},
 )
 
-ax.set_title(
-    f"Figure 1: Region / Instance type × Time period heatmap for F_comp({T_MINUTES})",
-    fontsize=12,
-    pad=12,
-)
 ax.set_xlabel("Region × Instance type", fontsize=10)
 ax.set_ylabel("Local time period", fontsize=10)
 ax.set_yticklabels(ax.get_yticklabels(), rotation=0)

@@ -159,12 +159,6 @@ fig.legend(
     handlelength=2.5,
 )
 
-fig.suptitle(
-    r"Figure 2: $F_\mathrm{comp}(d)$ for top-4 combinations with largest time-period variation",
-    fontsize=12,
-    fontweight="bold",
-    y=1.01,
-)
 
 plt.savefig("images/figure2_fcomp_multiregion.png", dpi=180, bbox_inches="tight")
 plt.show()
