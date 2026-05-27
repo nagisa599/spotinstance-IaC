@@ -29,7 +29,7 @@
 %
 \authorrunning{N. Nasu et al.}
 %
-\institute{Graduate School of Science and Engineering, \\Doshisha University, Kyotanabe, Kyoto, 619-0394, Japan \and
+\institute{Graduate School of Science and Engineering, \\Doshisha University, Kyotanabe, Kyoto, 610-0394, Japan \and
 \email{ctwn0144@mail4.doshisha.ac.jp} \and
 \email{ctwp0167@mail4.doshisha.ac.jp} \and
 \email{akohiga@mail.doshisha.ac.jp} \and
@@ -39,13 +39,11 @@
 \maketitle
 
 \begin{abstract}
-Spot instances offer significant cost savings. However, they may be interrupted before a short-running workload—such as a CI/CD job or batch-processing task—completes. Existing indicators such as Spot Placement Score (SPS) assess launch-time availability. However, they do not directly capture whether a successfully launched instance will remain available until a workload-specific deadline.
+Spot instances reduce cloud computing costs but may be interrupted before short-running workloads complete. Interruptions often result in a full retry and increased execution time and cost. Existing indicators such as Spot Placement Score (SPS) assess launch-time availability but not post-launch runtime continuity. We define a deadline-conditioned completion feasibility metric $F_{\mathrm{comp}}(d)$---the fraction of launched instances remaining uninterrupted until deadline $d$---and measure it across four AWS regions and three instance types over one week, for deadlines of 5, 10, 30, and 60 minutes. $F_{\mathrm{comp}}(d)$ varied substantially by local time period for compute-oriented and GPU-based types, with the Night period achieving the highest feasibility. These findings suggest time of day is an operationally meaningful scheduling factor for short-running spot workloads.
 
-To characterize this risk, we define deadline-conditioned completion feasibility $F_{\mathrm{comp}}(d)$—the fraction of successfully launched instances that remain uninterrupted until workload deadline $d$—and empirically measure it across four AWS regions and three instance types over one week, for deadlines of 5, 10, 30, and 60 minutes. Launch success rates were high overall, while a small fraction of instances were interrupted before the observation window ended.
+\keywords{Cloud Computing, Interruption Event, CI/CD, Completion Feasibility, Workload Scheduling, Diurnal Pattern}
 
-$F_{\mathrm{comp}}(d)$ varied substantially by local time period for compute-oriented and GPU-based instance types. The largest difference was observed for c6a.large in N.~Virginia, where the Night period achieved markedly higher completion feasibility than the Morning period. Similar patterns appeared in Ireland and Tokyo. By contrast, t3.micro remained stable across all conditions. These results provide preliminary evidence that local time of day can serve as an operationally meaningful, directly observable scheduling factor for short-running workloads on spot instances.
-
-\keywords{Spot Instance, Cloud Computing, Interruption Event, Time of Day, Short-Running Workloads, CI/CD}
+Short Research Paper
 \end{abstract}
 
 \section{Introduction}
