@@ -43,7 +43,8 @@ Spot instances reduce cloud computing costs but may be interrupted before short-
 
 \keywords{Cloud Computing, Interruption Event, CI/CD, Completion Feasibility, Workload Scheduling, Diurnal Pattern}
 
-Short Research Paper
+\noindent\textbf{Submission type:} Short Research Paper
+
 \end{abstract}
 
 \section{Introduction}
@@ -225,7 +226,7 @@ By analyzing these metrics by local time of day, region, and instance type, this
 
 In this experiment, we implement the proposed measurement framework on AWS using a scheduler-driven Lambda function that periodically launches spot instances and records launch results, runtime status, and interruption events in a database.
 
-We selected three instance types—c6a.large (compute-oriented), g4dn.xlarge (GPU-based), and t3.micro (lightweight)—as representative examples of different workload categories \cite{Pham2018}, to compare interruption tendencies among instance types with different resource characteristics.
+We selected three instance types—c6a.large (compute-oriented), g4dn.xlarge (GPU-based), and t3.micro (lightweight)—as representative examples of different workload categories \cite{Pham2018,AWSInstanceTypes}, to compare interruption tendencies among instance types with different resource characteristics.
 
 The experiment targets four AWS regions: N. Virginia (us-east-1), Tokyo (ap-northeast-1), Ireland (eu-west-1), and Singapore (ap-southeast-1). In each region, one spot instance is launched every hour for each instance type. Each instance is observed for up to one hour and is terminated by the system if no interruption event occurs during the observation window.
 
@@ -373,7 +374,7 @@ Ramesh, D.G.A., Lennon, R.G.:
 Evaluating the Impact of Reserved Instances vs. Spot Instances in DevOps Cloud Workflows.
 In: 2025 35th Irish Signals and Systems Conference (ISSC).
 IEEE (2025).
-\doi{10.1109/ISSC67739.2025.112915051}
+\doi{10.1109/ISSC67739.2025.11291505}
 
 \bibitem{Garg2025}
 Garg, D., Kaata, S.K., Bhumireddy, D.R., Bolla, B.K.:
@@ -414,6 +415,13 @@ Pham, T.-P., Ristov, S., Fahringer, T.:
 Performance and Behavior Characterization of Amazon EC2 Spot Instances.
 In: 2018 IEEE 11th International Conference on Cloud Computing (CLOUD).
 IEEE (2018). \doi{10.1109/CLOUD.2018.00017}
+
+\bibitem{AWSInstanceTypes}
+Amazon Web Services:
+Amazon EC2 Instance Types.
+Amazon EC2 User Guide.
+\url{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html}
+(Accessed: May 2026)
 
 \end{thebibliography}
 \end{document}
