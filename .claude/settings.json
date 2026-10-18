@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "Bash(aws service-quotas *)"
+      "Bash(aws service-quotas *)",
+      "Bash(chmod +x /Users/nasunagisa/Desktop/研究/DPS2025/compile.sh)",
+      "Bash(docker build *)"
     ]
   }
 }

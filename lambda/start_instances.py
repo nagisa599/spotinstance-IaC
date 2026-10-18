@@ -81,6 +81,44 @@ def _latest_spot_price(instance_type: str, az: str) -> float | None:
         return None
     return float(items[0]["SpotPrice"])
 
+# AZ名(ap-northeast-1c) -> AZ ID(apne1-az3) の対応。Lambdaコンテナ内でキャッシュする。
+_AZ_ID_CACHE: dict[str, str] = {}
+
+def _az_name_to_id(az_name: str) -> str | None:
+    if not _AZ_ID_CACHE:
+        try:
+            for z in ec2.describe_availability_zones()["AvailabilityZones"]:
+                _AZ_ID_CACHE[z["ZoneName"]] = z["ZoneId"]
+        except ClientError:
+            return None
+    return _AZ_ID_CACHE.get(az_name)
+
+def _spot_placement_score(instance_type: str, region: str, az: str) -> int | None:
+    """指定AZのSpot Placement Score(1〜10)を取得する。
+
+    SingleAvailabilityZone=True にするとAZ単位のスコアが返るが、応答は
+    AZ名ではなくAZ ID (apne1-az3 など) なので変換して突き合わせる。
+    取得できない場合は None（実験そのものは継続させる）。
+    """
+    az_id = _az_name_to_id(az)
+    if az_id is None:
+        return None
+    try:
+        resp = ec2.get_spot_placement_scores(
+            InstanceTypes=[instance_type],
+            TargetCapacity=1,
+            TargetCapacityUnitType="units",
+            SingleAvailabilityZone=True,
+            RegionNames=[region],
+            MaxResults=10,
+        )
+    except ClientError:
+        return None
+    for s in resp.get("SpotPlacementScores", []):
+        if s.get("AvailabilityZoneId") == az_id:
+            return int(s["Score"])
+    return None
+
 def handler(event, context):
     region = os.environ["REGION"]
 
@@ -94,11 +132,16 @@ def handler(event, context):
         launched = False
         last_error = None
         retry_count = 0
+        # 失敗時の記録でも参照するので、ループ前に初期化しておく
+        az = None
+        spot_price = None
+        sps_score = None
 
         for subnet_id in subnets_shuffled:
             subnet = ec2.describe_subnets(SubnetIds=[subnet_id])["Subnets"][0]
             az = subnet["AvailabilityZone"]
             spot_price = _latest_spot_price(instance_type, az)
+            sps_score = _spot_placement_score(instance_type, region, az)
 
             user_data = USER_DATA_TEMPLATE \
                 .replace("{{RUN_ID}}", run_id) \
@@ -147,6 +190,7 @@ def handler(event, context):
                         "timestamp":     {"S": request_at.strftime("%Y-%m-%dT%H:%M:%SZ")},
                         "day_period":    {"S": day_period},
                         "spot_price":    {"N": str(spot_price) if spot_price is not None else "0"},
+                        "sps_score":     {"N": str(sps_score)} if sps_score is not None else {"NULL": True},
                         "region":        {"S": region},
                         "retry_count":   {"N": str(retry_count)},
                         "success":       {"BOOL": False},
@@ -171,10 +215,11 @@ def handler(event, context):
                 Item={
                     "run_id":        {"S": run_id},
                     "instance_type": {"S": instance_type},
-                    "az":            {"S": az},
+                    "az":            {"S": az} if az is not None else {"NULL": True},
                     "timestamp":     {"S": request_at.strftime("%Y-%m-%dT%H:%M:%SZ")},
                     "day_period":    {"S": day_period},
                     "spot_price":    {"N": str(spot_price) if spot_price is not None else "0"},
+                    "sps_score":     {"N": str(sps_score)} if sps_score is not None else {"NULL": True},
                     "region":        {"S": region},
                     "retry_count":   {"N": str(retry_count)},
                     "success":       {"BOOL": False},

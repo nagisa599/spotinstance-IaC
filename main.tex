@@ -43,7 +43,7 @@ Spot instances reduce cloud computing costs but may be interrupted before short-
 
 \keywords{Cloud Computing, Interruption Event, CI/CD, Completion Feasibility, Workload Scheduling, Diurnal Pattern}
 
-\noindent\textbf{Submission type:} Short Research Paper
+\noindent\textbf{Submission type:} Regular Research Paper
 
 \end{abstract}
 
@@ -350,6 +350,35 @@ The main idea of this study is to treat time of day as an operational variable f
 % 本研究では，スポットインスタンスの信頼性を，起動可能性やインフラレベルの生存時間だけでなく，5分，10分，30分，60分の deadline-conditioned completion feasibility として再定義した．
 % また，時間帯を短時間ワークロードの実行タイミングを決めるための運用上の変数として扱う点を強調した．
 % 今後は，観測期間の延長，サンプル数の増加，実際の CI/CD・バッチ処理ワークロードの評価，SPS との比較を行う予定である．
+
+\appendix
+
+\section{Instance Type Specifications}
+\label{app:instance_types}
+
+To aid interpretation of the interruption tendencies reported in Sections~5 and~6, Table~\ref{tab:instance_specs} summarizes the hardware characteristics of the three instance types evaluated in this study. The three types were selected as representative examples of distinct workload categories: compute-oriented (c6a.large), GPU-accelerated (g4dn.xlarge), and lightweight burstable (t3.micro)~\cite{Pham2018,AWSInstanceTypes}.
+
+The three types differ markedly in resource capacity and, consequently, in their position in the spot market. c6a.large is a compute-optimized instance backed by an AMD EPYC processor with no attached accelerator. g4dn.xlarge is a GPU-accelerated instance equipped with a single NVIDIA T4 GPU and local NVMe SSD storage, and it is the most resource-intensive and most expensive of the three. t3.micro is a burstable general-purpose instance with the smallest amount of memory and no GPU. The observed spot price, measured directly during the observation period, spans nearly two orders of magnitude between t3.micro and g4dn.xlarge, reflecting the substantially higher demand for GPU and compute capacity. This demand asymmetry is consistent with the higher interruption susceptibility of c6a.large and g4dn.xlarge, and the relative robustness of t3.micro, discussed in Section~6.2.
+
+\begin{table}[t]
+\centering
+\caption{Specifications of the three instance types evaluated in this study. The observed spot price is the mean hourly price (USD/h) recorded across the four regions during the observation period (May 19--25, 2026).}
+\label{tab:instance_specs}
+\begin{tabularx}{\textwidth}{@{}l>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+ & \textbf{c6a.large} & \textbf{g4dn.xlarge} & \textbf{t3.micro} \\
+\midrule
+Category & Compute-optimized & GPU-accelerated & Burstable general-purpose \\
+Processor & AMD EPYC (3rd gen) & Intel Xeon (Cascade Lake) & Intel Xeon (burstable) \\
+vCPU & 2 & 4 & 2 (burstable) \\
+Memory & 4 GiB & 16 GiB & 1 GiB \\
+GPU & --- & 1$\times$ NVIDIA T4 (16 GiB) & --- \\
+Local storage & EBS-only & 125 GB NVMe SSD & EBS-only \\
+Network bandwidth & Up to 12.5 Gbps & Up to 25 Gbps & Up to 5 Gbps \\
+Obs.\ spot price & 0.038 & 0.277 & 0.005 \\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 %
 % ---- Bibliography ----

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 DATA_DIR = "data"
-T_MINUTES = 60
+T_MINUTES_LIST = [5, 10, 30, 60]
 DATE_START = "2026-05-19T00:00:00Z"
 DATE_END   = "2026-05-26T00:00:00Z"
 
@@ -21,7 +21,7 @@ REGION_LABELS = {
     "ap-northeast-1": "Tokyo",
     "ap-southeast-1": "Singapore",
     "eu-west-1":      "Ireland",
-    "us-east-1":      "Virginia",
+    "us-east-1":      "N.Virginia",
 }
 
 PERIOD_ORDER = ["Night", "Morning", "Afternoon", "Evening"]
@@ -40,6 +40,10 @@ def classify_period(local_hour: int) -> str:
 dfs = [pd.read_csv(f) for f in glob.glob(f"{DATA_DIR}/*.csv")]
 df = pd.concat(dfs, ignore_index=True)
 
+# Some CSV exports overlap (e.g. a later dump is a superset of an earlier one);
+# run_id is unique per run, so drop duplicates to avoid double-counting.
+df = df.drop_duplicates(subset="run_id").reset_index(drop=True)
+
 df = df[(df["timestamp"] >= DATE_START) & (df["timestamp"] < DATE_END)].reset_index(drop=True)
 
 # F_comp is defined only over successfully launched instances (N_succ)
@@ -52,21 +56,11 @@ df["local_hour"] = df.apply(
 )
 df["time_period"] = df["local_hour"].apply(classify_period)
 
-# ── F_comp(T) ────────────────────────────────────────────────────────────────
-df["completed"] = ~df["interrupted"].astype(bool)
+# ── Column / row ordering (shared across all T) ───────────────────────────────
+region_order   = ["us-east-1", "eu-west-1", "ap-northeast-1", "ap-southeast-1"]
+instance_order = ["c6a.large", "g4dn.xlarge", "t3.micro"]
 
-grouped = (
-    df.groupby(["region", "instance_type", "time_period"])["completed"]
-    .agg(["sum", "count"])
-    .reset_index()
-)
-grouped["f_comp"] = grouped["sum"] / grouped["count"]
-
-# ── Build pivot ───────────────────────────────────────────────────────────────
-region_order   = ["ap-northeast-1", "ap-southeast-1", "eu-west-1", "us-east-1"]
-instance_order = ["t3.micro", "c6a.large", "g4dn.xlarge"]
-
-grouped["col_label"] = grouped.apply(
+df["col_label"] = df.apply(
     lambda r: f"{REGION_LABELS[r['region']]}\n{r['instance_type']}", axis=1
 )
 col_order = [
@@ -75,50 +69,68 @@ col_order = [
     for i in instance_order
 ]
 
-pivot       = grouped.pivot(index="time_period", columns="col_label", values="f_comp")
-count_pivot = grouped.pivot(index="time_period", columns="col_label", values="count")
-sum_pivot   = grouped.pivot(index="time_period", columns="col_label", values="sum")
+# ── F_comp(T): a run "completes" a T-min job if it was not interrupted, or it
+#    survived at least T minutes before being interrupted (uptime_s >= T*60) ────
+def make_heatmap(T_minutes: int) -> None:
+    T_sec = T_minutes * 60
+    completed = (~df["interrupted"].astype(bool)) | (df["uptime_s"] >= T_sec)
 
-pivot       = pivot.reindex(index=PERIOD_ORDER, columns=col_order)
-count_pivot = count_pivot.reindex(index=PERIOD_ORDER, columns=col_order)
-sum_pivot   = sum_pivot.reindex(index=PERIOD_ORDER, columns=col_order)
+    grouped = (
+        completed.groupby([df["col_label"], df["time_period"]])
+        .agg(["sum", "count"])
+        .reset_index()
+    )
+    grouped["f_comp"] = grouped["sum"] / grouped["count"]
 
-# ── Annotation ────────────────────────────────────────────────────────────────
-annot = pd.DataFrame(index=PERIOD_ORDER, columns=col_order, dtype=str)
-for row in PERIOD_ORDER:
-    for col in col_order:
-        v = pivot.loc[row, col]
-        if pd.isna(v):
-            annot.loc[row, col] = "N/A"
-        else:
-            n = int(count_pivot.loc[row, col])
-            s = int(sum_pivot.loc[row, col])
-            annot.loc[row, col] = f"{v:.2f}\n({s}/{n})"
+    pivot       = grouped.pivot(index="time_period", columns="col_label", values="f_comp")
+    count_pivot = grouped.pivot(index="time_period", columns="col_label", values="count")
+    sum_pivot   = grouped.pivot(index="time_period", columns="col_label", values="sum")
 
-# ── Draw heatmap ──────────────────────────────────────────────────────────────
-fig, ax = plt.subplots(figsize=(14, 4.5))
+    pivot       = pivot.reindex(index=PERIOD_ORDER, columns=col_order)
+    count_pivot = count_pivot.reindex(index=PERIOD_ORDER, columns=col_order)
+    sum_pivot   = sum_pivot.reindex(index=PERIOD_ORDER, columns=col_order)
 
-sns.heatmap(
-    pivot.astype(float),
-    annot=annot,
-    fmt="",
-    cmap="RdYlGn",
-    vmin=0,
-    vmax=1,
-    linewidths=0.5,
-    ax=ax,
-    cbar_kws={"label": f"F_comp({T_MINUTES}) — P(no interruption in {T_MINUTES} min)"},
-)
+    # ── Annotation ─────────────────────────────────────────────────────────────
+    annot = pd.DataFrame(index=PERIOD_ORDER, columns=col_order, dtype=str)
+    for row in PERIOD_ORDER:
+        for col in col_order:
+            v = pivot.loc[row, col]
+            if pd.isna(v):
+                annot.loc[row, col] = "N/A"
+            else:
+                n = int(count_pivot.loc[row, col])
+                s = int(sum_pivot.loc[row, col])
+                annot.loc[row, col] = f"{v:.2f}\n({s}/{n})"
 
-ax.set_xlabel("Region × Instance type", fontsize=10)
-ax.set_ylabel("Local time period", fontsize=10)
-ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
-ax.set_xticklabels(ax.get_xticklabels(), rotation=0, fontsize=8)
+    # ── Draw heatmap ───────────────────────────────────────────────────────────
+    fig, ax = plt.subplots(figsize=(14, 4.5))
 
-for i in range(1, len(region_order)):
-    ax.axvline(x=i * len(instance_order), color="black", linewidth=1.5)
+    sns.heatmap(
+        pivot.astype(float),
+        annot=annot,
+        fmt="",
+        cmap="RdYlGn",
+        vmin=0,
+        vmax=1,
+        linewidths=0.5,
+        ax=ax,
+        cbar_kws={"label": f"F_comp({T_minutes}) — P(no interruption in {T_minutes} min)"},
+    )
 
-plt.tight_layout()
-plt.savefig("images/figure1_fcomp60_heatmap.png", dpi=150, bbox_inches="tight")
-plt.show()
-print("Saved: images/figure1_fcomp60_heatmap.png")
+    ax.set_xlabel("Region × Instance type", fontsize=10)
+    ax.set_ylabel("Local time period", fontsize=10)
+    ax.set_yticklabels(ax.get_yticklabels(), rotation=0)
+    ax.set_xticklabels(ax.get_xticklabels(), rotation=0, fontsize=8)
+
+    for i in range(1, len(region_order)):
+        ax.axvline(x=i * len(instance_order), color="black", linewidth=1.5)
+
+    plt.tight_layout()
+    out = f"images/figure1_fcomp{T_minutes}_heatmap.png"
+    plt.savefig(out, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"Saved: {out}")
+
+
+for T in T_MINUTES_LIST:
+    make_heatmap(T)

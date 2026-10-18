@@ -1,0 +1,92 @@
+\contentsline {chapter}{概要}{1}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}序論}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}研究背景}{5}{section.1.1}%
+\contentsline {section}{\numberline {1.2}問題意識}{5}{section.1.2}%
+\contentsline {section}{\numberline {1.3}本研究の問い}{6}{section.1.3}%
+\contentsline {section}{\numberline {1.4}本論文のアプローチ}{7}{section.1.4}%
+\contentsline {section}{\numberline {1.5}本論文の貢献}{7}{section.1.5}%
+\contentsline {section}{\numberline {1.6}本論文の構成}{8}{section.1.6}%
+\contentsline {chapter}{\numberline {2}関連研究}{9}{chapter.2}%
+\contentsline {section}{\numberline {2.1}スポットインスタンスの可用性と中断対策}{9}{section.2.1}%
+\contentsline {section}{\numberline {2.2}中断挙動の時間的特性}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}チェックポイントと分割実行}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}本研究の位置づけ}{10}{section.2.4}%
+\contentsline {chapter}{\numberline {3}中断特性の実測}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}本章のねらい}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}期限条件付き完了可能性}{11}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}問題の定義}{11}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}指標の定義}{11}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}測定フレームワーク}{12}{section.3.3}%
+\contentsline {section}{\numberline {3.4}実験設定}{13}{section.3.4}%
+\contentsline {paragraph}{インスタンスタイプ．}{13}{section*.7}%
+\contentsline {paragraph}{リージョン．}{13}{section*.9}%
+\contentsline {paragraph}{時間帯の区分．}{13}{section*.10}%
+\contentsline {paragraph}{観測期間と価格設定．}{14}{section*.12}%
+\contentsline {section}{\numberline {3.5}実測結果}{14}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}全体の傾向}{14}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}条件による変動}{14}{subsection.3.5.2}%
+\contentsline {subsection}{\numberline {3.5.3}中断ハザード率の挙動}{15}{subsection.3.5.3}%
+\contentsline {paragraph}{この主張の限界．}{16}{section*.18}%
+\contentsline {subsection}{\numberline {3.5.4}起動オーバーヘッド}{16}{subsection.3.5.4}%
+\contentsline {section}{\numberline {3.6}本章の限界}{16}{section.3.6}%
+\contentsline {section}{\numberline {3.7}本章のまとめ}{17}{section.3.7}%
+\contentsline {chapter}{\numberline {4}分割粒度を考慮した実行モデル}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}本章のねらい}{18}{section.4.1}%
+\contentsline {paragraph}{本章の構成．}{18}{section*.20}%
+\contentsline {section}{\numberline {4.2}分割がもたらす二つの効果}{18}{section.4.2}%
+\contentsline {paragraph}{効果 1：断片あたりの被中断確率の低下．}{18}{section*.21}%
+\contentsline {paragraph}{効果 2：中断時損失量の低下．}{18}{section*.22}%
+\contentsline {section}{\numberline {4.3}コストモデル}{19}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}記号と決定変数}{19}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}二要素の定量化}{19}{subsection.4.3.2}%
+\contentsline {paragraph}{第一要素：やり直す回数．}{19}{section*.25}%
+\contentsline {paragraph}{第二要素：1 回あたりの損失．}{19}{section*.26}%
+\contentsline {subsection}{\numberline {4.3.3}総無駄時間}{20}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}最適化問題}{20}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}最適分割数の存在}{20}{section.4.4}%
+\contentsline {section}{\numberline {4.5}二つの備え方とその選択}{21}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}警告駆動復旧}{21}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}どちらが有利かを決める要因}{21}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}選択の基準}{22}{subsection.4.5.3}%
+\contentsline {paragraph}{条件 1：猶予時間内に保存と復旧が完了すること．}{22}{section*.30}%
+\contentsline {paragraph}{条件 2：任意の時点で状態を保存できること．}{22}{section*.31}%
+\contentsline {paragraph}{条件 3：警告が十分な確率で通知されること．}{23}{section*.32}%
+\contentsline {subsection}{\numberline {4.5.4}選択の枠組み}{23}{subsection.4.5.4}%
+\contentsline {paragraph}{本枠組みの意義．}{23}{section*.34}%
+\contentsline {section}{\numberline {4.6}チェックポイントコストに対する感度}{24}{section.4.6}%
+\contentsline {paragraph}{警告駆動復旧との関係．}{25}{section*.37}%
+\contentsline {paragraph}{実務上の含意．}{25}{section*.39}%
+\contentsline {section}{\numberline {4.7}条件による効果の違い}{25}{section.4.7}%
+\contentsline {paragraph}{注意．}{26}{section*.42}%
+\contentsline {section}{\numberline {4.8}本章のまとめ}{27}{section.4.8}%
+\contentsline {chapter}{\numberline {5}検証計画}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}検証すべき事項}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}対象ワークロードの選定}{28}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}選定基準}{28}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}候補の比較}{29}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}実験 1：チェックポイントコストの実測}{29}{section.5.3}%
+\contentsline {paragraph}{目的．}{29}{section*.45}%
+\contentsline {paragraph}{方法．}{29}{section*.46}%
+\contentsline {paragraph}{規模．}{29}{section*.47}%
+\contentsline {paragraph}{意義．}{29}{section*.48}%
+\contentsline {section}{\numberline {5.4}実験 2：U 字カーブの検証}{29}{section.5.4}%
+\contentsline {paragraph}{目的．}{29}{section*.49}%
+\contentsline {paragraph}{方法．}{29}{section*.50}%
+\contentsline {paragraph}{測定項目．}{30}{section*.51}%
+\contentsline {paragraph}{規模．}{30}{section*.52}%
+\contentsline {section}{\numberline {5.5}実験 3：中断の独立性の検証}{30}{section.5.5}%
+\contentsline {paragraph}{目的．}{30}{section*.53}%
+\contentsline {paragraph}{方法．}{30}{section*.54}%
+\contentsline {paragraph}{規模．}{30}{section*.55}%
+\contentsline {section}{\numberline {5.6}実験規模のまとめ}{30}{section.5.6}%
+\contentsline {section}{\numberline {5.7}実装方針}{30}{section.5.7}%
+\contentsline {section}{\numberline {5.8}測定結果と結論の対応}{30}{section.5.8}%
+\contentsline {section}{\numberline {5.9}事前分割を選ぶ場合の粒度}{31}{section.5.9}%
+\contentsline {section}{\numberline {5.10}リスクと対策}{31}{section.5.10}%
+\contentsline {chapter}{\numberline {6}結論}{33}{chapter.6}%
+\contentsline {section}{\numberline {6.1}本論文のまとめ}{33}{section.6.1}%
+\contentsline {section}{\numberline {6.2}本研究の意義}{33}{section.6.2}%
+\contentsline {section}{\numberline {6.3}今後の課題}{34}{section.6.3}%
+\contentsline {chapter}{謝辞}{35}{chapter*.61}%
+\contentsline {chapter}{参考文献}{36}{chapter*.62}%
+\contentsline {chapter}{参考文献}{36}{chapter*.62}%

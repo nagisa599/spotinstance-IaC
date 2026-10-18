@@ -1,0 +1,313 @@
+% -----------------------------------------------------------------------------
+% future-main-simple.tex
+% スポットインスタンス向けスケジューリング戦略（簡易版）
+% 詳細版は future-main.tex を参照
+% -----------------------------------------------------------------------------
+\documentclass[11pt,a4paper]{ltjsarticle}
+
+\usepackage{luatexja}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{geometry}
+
+\geometry{margin=27mm}
+
+\newcommand{\Fcomp}{F_{\mathrm{comp}}}
+\newcommand{\Pspot}{P_{\mathrm{spot}}}
+\newcommand{\E}{\mathbb{E}}
+
+\title{スポットインスタンスの\\スケジューリング戦略（簡易版）}
+\author{那須 渚}
+\date{2026年10月12日}
+
+\begin{document}
+\maketitle
+
+% =============================================================================
+\section{やりたいこと}
+
+これまでの研究で，$\Fcomp(d)$（期限 $d$ までインスタンスが中断されない確率）
+を測定し，\textbf{夜間が最も中断されにくい}ことがわかった．
+
+しかし，\textbf{測っただけで，それを使って何かを決める仕組みがない．}
+
+そこで次は，$\Fcomp(d)$ を使って
+
+\begin{quote}
+\textbf{ジョブをどのリージョンで・どのタイプで・いつ実行するか}
+\end{quote}
+
+を自動で決める戦略をつくり，GitHub Actions で効果を確かめる．
+
+% =============================================================================
+\section{考え方}
+
+中断されるとジョブは最初からやり直しになる．
+つまり\textbf{中断されやすい時間帯を選ぶと，やり直しの分だけ余計にお金がかかる．}
+
+この「結局いくらかかるか」を計算できれば，一番安い条件を選べる．
+計算は 3 段階で進む．
+
+% -----------------------------------------------------------------------------
+\subsection{(1) 平均何回やれば終わるか}
+
+$p$ を 1 回で成功する確率とする（$= \Fcomp$ の実測値）．
+成功するまで繰り返すときの平均回数は，
+
+\begin{equation}
+\E[\text{試行回数}] = \frac{1}{p}
+\end{equation}
+
+「10 回中 7 回成功するなら，1 回成功させるのに $10/7$ 回必要」という意味である．
+
+\begin{table}[htbp]
+\centering
+\caption{実測値の例（N.~Virginia / c6a.large / $d = 60$ 分）}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+時間帯 & $p$ & 平均試行回数 $1/p$ \\
+\midrule
+Night   & $0.98$ & $1.02$ 回 \\
+Morning & $0.69$ & $1.45$ 回 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% -----------------------------------------------------------------------------
+\subsection{(2) 合計で何分ぶん課金されるか}
+
+課金される時間は 2 つに分かれる．
+
+\begin{itemize}
+  \item \textbf{成功した 1 回} $\to$ $d$ 分ぶん
+  \item \textbf{失敗した回数}（平均 $\frac{1}{p}-1$ 回）$\to$
+        中断されるまでの時間 $\bar u$ ぶん
+\end{itemize}
+
+$\bar u$ は「中断されたジョブが平均何分走ってから落ちたか」で，
+観測データ（\texttt{uptime\_s}）から直接わかる．
+
+\begin{equation}
+\E[\text{課金時間}] \;=\; d \;+\; \left(\frac{1}{p}-1\right) \times \bar u
+\label{eq:billed}
+\end{equation}
+
+\paragraph{例（$d = 60$ 分，$\bar u \approx 12$ 分）.}
+
+\begin{align}
+\text{Night}\ (p = 0.98):\quad   & 60 + 0.02 \times 12 = 60.2\ \text{分} \\
+\text{Morning}\ (p = 0.69):\quad & 60 + 0.45 \times 12 = 65.4\ \text{分}
+\end{align}
+
+Morning は Night より \textbf{5.2 分ぶん余計に}課金される．
+これが時間帯を選ぶ意味である．
+
+% -----------------------------------------------------------------------------
+\subsection{(3) 金額に直す}
+
+スポット価格 $\Pspot$ は 1 時間あたりなので，$60$ で割って分に合わせる．
+
+\begin{equation}
+C = \frac{\Pspot}{60} \times \E[\text{課金時間}]
+\end{equation}
+
+$\Pspot = 0.0295$ USD/h のとき，
+Night は $0.0296$ USD，Morning は $0.0322$ USD となる．
+
+% =============================================================================
+\section{戦略：一番安い条件を選ぶ}
+
+ここまでで「リージョン $r$・タイプ $\tau$・起動時刻 $t$ を決めれば
+コストが計算できる」状態になった．あとは\textbf{全部試して一番安いものを選ぶ}．
+
+候補は $4\ \text{リージョン} \times 3\ \text{タイプ} \times 24\ \text{時刻}
+= 288\ \text{通り}$ しかないので，全列挙でよい．
+
+ただし，ただ安いだけだと「来週の深夜に実行します」という答えが出てしまう．
+そこで次の 2 つの条件をつける．
+
+\begin{table}[htbp]
+\centering
+\caption{戦略が守る条件}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+条件 & 意味 \\
+\midrule
+締切 & $t$ は $t_0$ から $t_0 + (D_j - d_j)$ までの範囲で選ぶ \\
+\addlinespace
+信頼性 & 成功確率が $p_{\min}$ 未満の条件は選ばない \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{締切条件（slack）.}
+$D_j$ は「いつまでに終わればよいか」，$d_j$ は実行時間なので，
+\textbf{遅らせてよい上限}は $D_j - d_j$ になる．これを \textbf{slack} と呼ぶ．
+
+例：$10$ 分のジョブで「$6$ 時間以内でよい」なら，約 $5$ 時間 $50$ 分まで待てる．
+
+slack $= 0$ なら今すぐ実行するしかなく，\textbf{選べるのはリージョンとタイプだけ}
+になる．これは既発表の
+``region selection can substitute for time-shifting'' に対応する．
+
+\paragraph{信頼性条件.}
+期待値はあくまで平均なので，「成功率 $30\%$ でも，何度もやり直せば平均は間に合う」
+という計算結果が出てしまうことがある．
+しかし 3 回に 2 回失敗する CI は実務で使えない．
+そこで $p_{\min}$（例：$0.8$）という下限を直接設ける．
+
+% =============================================================================
+\section{何と比べるか}
+
+戦略の効果を示すには，比較相手が要る．次の 5 つを比べる．
+
+\begin{table}[htbp]
+\centering
+\caption{比較する戦略}
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule
+戦略 & やること & 役割 \\
+\midrule
+S0: Naive       & 今すぐ・固定の条件で実行 & GitHub Actions の素の挙動 \\
+\addlinespace
+S1: Cheapest    & 一番安い価格を選ぶ & 価格だけ見る実務的手法 \\
+\addlinespace
+S2: Region-only & 今すぐ・リージョンだけ選ぶ & 時間シフトできない場合 \\
+\addlinespace
+S3: Proposed    & リージョン・タイプ・時刻を全部選ぶ & \textbf{提案手法} \\
+\addlinespace
+S4: Oracle      & 結果を知った上での最良 & 到達可能な上限 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\paragraph{S2 を入れる理由.}
+S2 と S3 を比べると，\textbf{時間をずらした効果}と
+\textbf{リージョンを変えた効果}を分けて示せる．
+査読でほぼ必ず聞かれる点なので，最初から分けておく．
+
+% =============================================================================
+\section{注意：少ないデータを信じすぎない}
+
+$\Fcomp$ は $30$--$42$ 件から推定した値なので，
+たまたま高く出たセルがある．
+そのまま「一番高いセル」を選ぶと，運が良かっただけの条件を
+選んでしまう（winner's curse）．
+
+対策は，推定値そのものではなく
+\textbf{$95\%$ 信頼区間の下端}（Wilson の下側信頼限界）を使うこと．
+
+\begin{itemize}
+  \item サンプルが少ないほど，この値は大きく下がる
+  \item つまり\textbf{データの少ない条件を自動的に避けてくれる}
+\end{itemize}
+
+計算は \texttt{statsmodels} の \texttt{proportion\_confint(k, n,
+method='wilson')} で一行である．
+通常版（S3）と保守版（S3-LCB）の両方を比べれば，それ自体が結果になる．
+
+% =============================================================================
+\section{実験のやり方}
+
+\subsection{GitHub Actions の構成}
+
+\begin{table}[htbp]
+\centering
+\caption{ワークフローの 4 ステップ}
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule
+ジョブ & 実行場所 & やること \\
+\midrule
+decide    & GitHub hosted & 戦略に従って $(r, \tau, t)$ を決める \\
+\addlinespace
+provision & GitHub hosted & 決めた時刻まで待ち，スポットを起動して
+                            runner を登録 \\
+\addlinespace
+workload  & スポット上 & 実際の CI ジョブを走らせる \\
+\addlinespace
+collect   & GitHub hosted & 結果（成功・中断・コスト・時間）を記録 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+中断の検知は，既存の \texttt{start\_instances.py} と同じ方法
+（インスタンス内から \texttt{spot/instance-action} を監視）が使える．
+検知したら失敗として記録し，provision からやり直す．
+
+\paragraph{注意点.}
+runner は必ず \texttt{--ephemeral} で登録すること．
+そうしないと中断後に古い runner が残り，次の試行が汚れる．
+
+\subsection{振るパラメータ}
+
+\begin{table}[htbp]
+\centering
+\caption{実験パラメータ}
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule
+パラメータ & 水準 & 備考 \\
+\midrule
+$d_j$（実行時間） & $5, 10, 30, 60$ 分 & 既発表と同じ \\
+slack             & $0, 1, 3, 6, 12$ 時間 & $0$ は時間シフト不可 \\
+$p_{\min}$        & $0, 0.8, 0.9$ & $0$ は制約なし \\
+戦略              & S0--S4, S3-LCB & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{測るもの}
+
+\begin{itemize}
+  \item 実際にかかったコスト（USD）
+  \item 完了までの時間
+  \item やり直した回数
+  \item 締切に間に合った割合
+  \item \textbf{式 \eqref{eq:billed} の予測と実測のズレ}
+\end{itemize}
+
+最後の項目が重要で，これは\textbf{式が現実を説明できているか}の検証になる．
+
+% =============================================================================
+\section{まとめ}
+
+\begin{table}[htbp]
+\centering
+\caption{使う式は 3 つだけ}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+式 & 意味 \\
+\midrule
+$\dfrac{1}{p}$ & 成功するまでの平均回数 \\[8pt]
+$d + \left(\dfrac{1}{p}-1\right)\bar u$ & 合計の課金時間（分） \\[8pt]
+$\dfrac{\Pspot}{60} \times (\text{上式})$ & 金額に換算 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+必要なデータは次の 3 つだけで，\textbf{すべて手元にある．}
+
+\begin{itemize}
+  \item $p$ $=$ $\Fcomp$（計算済み）
+  \item $\bar u$ $=$ 中断時の \texttt{uptime\_s}（データにある）
+  \item $\Pspot$ $=$ スポット価格（実測済み）
+\end{itemize}
+
+\paragraph{次にやること.}
+まず既存の CSV から上の 3 つの表をつくり，
+S0--S4 をシミュレーションで比較する \texttt{strategy.py} を書く．
+
+GitHub Actions の実機実験はその後でよい．
+シミュレーションで\textbf{差が出る条件を先に見つけてから}実機に移るほうが，
+お金も時間も節約できる．
+
+\vspace{1em}
+\noindent
+\rule{\textwidth}{0.4pt}
+
+\noindent
+\small
+詳細版（導出・最適化問題としての定式化・実装コード）は
+\texttt{future-main.pdf} を参照．
+
+\end{document}

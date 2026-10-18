@@ -175,6 +175,7 @@ data "aws_iam_policy_document" "lambda_policy" {
       "ec2:DescribeSubnets",
       "ec2:DescribeAvailabilityZones",
       "ec2:DescribeSpotPriceHistory",
+      "ec2:GetSpotPlacementScores",
       "ec2:CreateTags",
     ]
     resources = ["*"]

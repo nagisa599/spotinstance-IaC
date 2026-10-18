@@ -1,0 +1,1898 @@
+This is LuaHBTeX, Version 1.24.0 (TeX Live 2026)  (format=lualatex 2026.7.19)  13 OCT 2026 02:22
+ restricted system commands enabled.
+**thesis-split.tex
+(./thesis-split.tex
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
+Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
+Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended 
+collection.
+luaotfload | conf : Root cache directory is "/usr/local/texlive/2026/texmf-var/l
+uatex-cache/generic/names".
+luaotfload | init : Loading fontloader "fontloader-2023-12-28.lua" from kpse-res
+olved path "/usr/local/texlive/2026/texmf-dist/tex/luatex/luaotfload/fontloader-
+2023-12-28.lua".
+Lua-only attribute luaotfload@noligature = 1
+luaotfload | init : Context OpenType loader version 3.134
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.glyph_stream' in `glyph_stream_provider'.
+Inserting `luaotfload.define_font' in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 2
+luaotfload | conf : Root cache directory is "/usr/local/texlive/2026/texmf-var/l
+uatex-cache/generic/names".
+Inserting `luaotfload.harf.strip_prefix' in `find_opentype_file'.
+Inserting `luaotfload.harf.strip_prefix' in `find_truetype_file'.
+Removing  `luaotfload.glyph_stream' from `glyph_stream_provider'.
+Inserting `luaotfload.harf.glyphstream' in `glyph_stream_provider'.
+Inserting `luaotfload.harf.finalize_vlist' in `post_linebreak_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `luaotfload.cleanup_files' in `wrapup_run'.
+Inserting `luaotfload.harf.finalize_unicode' in `finish_pdffile'.
+Inserting `luaotfload.glyphinfo' in `glyph_info'.
+Lua-only attribute luaotfload.letterspace_done = 3
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.fixup_fontdata' in `luaotfload.patch_font_unsafe'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `tracingstacklevels' in `input_level_string'. (/usr/local/texlive/202
+6/texmf-dist/tex/luatex/luatexja/ltjsreport.cls
+Document Class: ltjsreport 2026-05-17 ltjsclasses 
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/luatexja.sty
+Package: luatexja 2026-05-17 Japanese Typesetting with Lua(La)TeX
+
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/luatexja-core.sty
+Package: luatexja-core 2023-10-07 Core of LuaTeX-ja
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count274
+)
+\CatcodeTableOther=\catcodetable14
+\CatcodeTableExpl=\catcodetable15
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks17
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks18
+\XKV@tempa@toks=\toks19
+\XKV@tempb@toks=\toks20
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count275
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count276
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/everyhook/everyhook.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/svn-prov/svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: everyhook 2014/11/26 v1.2 (SVN Rev: 12)\ Hooks for low level TeX every
+X primitives.
+\everypar=\toks21
+\frozen@everymath=\toks22
+\frozen@everydisplay=\toks23
+\everyhbox=\toks24
+\everyvbox=\toks25
+\everycr=\toks26
+)
+\ltjlineendcomment=\count277
+\ltj@dimen@zw=\dimen149
+\ltj@dimen@zh=\dimen150
+\ltj@dimen@jQ=\dimen151
+\ltj@icflag=\attribute4
+\ltj@curjfnt=\attribute5
+\ltj@curtfnt=\attribute6
+\ltj@charclass=\attribute7
+\ltj@charcode=\attribute8
+\ltj@autospc=\attribute9
+\ltj@autoxspc=\attribute10
+\ltj@yablshift=\attribute11
+\ltj@ykblshift=\attribute12
+\ltj@tablshift=\attribute13
+\ltj@tkblshift=\attribute14
+\jfam=\attribute15
+\ltj@vert@ori=\attribute16
+\ltj@dir=\attribute17
+\ltj@@japanese=\language2
+\ltj@tempcnta=\count278
+\ltj@tempdima=\dimen152
+\ltj@@stack=\count279
+\ltj@@group@level=\count280
+\ltj@kcat0=\attribute18
+\ltj@kcat1=\attribute19
+\ltj@kcat2=\attribute20
+\ltj@kcat3=\attribute21
+\ltj@kcat4=\attribute22
+\ltj@kcat5=\attribute23
+\ltj@kcat6=\attribute24
+Custom whatsit inhibitglue = 1
+Custom whatsit stack_marker = 2
+Custom whatsit begin_par = 3
+Custom whatsit direction = 4
+Custom whatsit box_boundary = 5
+Custom whatsit ja_al_boundary = 6
+Module luatexbase Info: Uninstalling kernel luatexbase code on input line 184
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/ltj-cid-auto-adobe-japan
+1.lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/ltj-cid-auto-ad
+obe-japan1.luc)
+Lua module: luatexja.charrange 2022-08-19 Handling the range of Japanese charact
+ers
+Lua module: luatexja.stack 2022-08-20 LuaTeX-ja stack system
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `post_linebreak_filter'.
+Inserting `ltj.direction' in `vpack_filter'.
+Inserting `ltj.direction' in `pre_output_filter'.
+Inserting `ltj.lineskip' in `post_linebreak_filter'.
+Inserting `ltj.lineskip' in `append_to_vlist_filter'.
+Lua module: luatexja.jfont 2025-05-04 Loader for Japanese fonts
+Removing  `luaotfload.define_font' from `define_font'.
+Inserting `luatexja.font_callback' in `define_font'.
+Removing  `luaotfload.aux.set_sscale_dimens' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_font_index' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.patch_cambria_domh' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_capheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_xheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.rewrite_fontname' from `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luatexja.define_font'.
+Inserting `ltj.get_vert_form' in `luatexja.define_jfont'.
+Removing  `ltj.prepare_extra_data' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_sscale_dimens' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_font_index' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.patch_cambria_domh' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_capheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.aux.set_xheight' from `luaotfload.patch_font'.
+Removing  `luaotfload.rewrite_fontname' from `luaotfload.patch_font'.
+Inserting `ltj.supply_tounicode' in `luaotfload.patch_font'.
+Inserting `ltj.prepare_extra_data' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_sscale_dimens' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_font_index' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.patch_cambria_domh' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_capheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.aux.set_xheight' in `luaotfload.patch_font'.
+Inserting `luaotfload.rewrite_fontname' in `luaotfload.patch_font'.
+Inserting `ltj.process_input_buffer' in `process_input_buffer'.
+Inserting `ltj.hyphenate' in `hyphenate'.
+Removing  `luaotfload.node_processor' from `hpack_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.set_stack_level' in `hpack_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Removing  `luaotfload.node_processor' from `pre_linebreak_filter'.
+Inserting `ltj.set_stack_level' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Lua module: luatexja.jfmglue 2026-01-07 Insertion process of JFM glues, [x]kanji
+skip and others
+Inserting `luatexja.beginpar.np_info' in `luatexja.jfmglue.whatsit_getinfo'.
+Inserting `luatexja.beginpar.np_info_after' in `luatexja.jfmglue.whatsit_after'.
+Inserting `ltj.mlist_to_hlist_pre' in `pre_mlist_to_hlist_filter'.
+Inserting `ltj.main' in `pre_linebreak_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.main' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+Removing  `ltj.set_stack_level' from `pre_linebreak_filter'.
+Removing  `luaotfload.node_processor' from `pre_linebreak_filter'.
+Removing  `ltj.main' from `pre_linebreak_filter'.
+Inserting `ltj.adjust_icflag' in `pre_linebreak_filter'.
+Inserting `ltj.set_stack_level' in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' in `pre_linebreak_filter'.
+Inserting `ltj.main' in `pre_linebreak_filter'.
+Removing  `ltj.set_stack_level' from `hpack_filter'.
+Removing  `luaotfload.node_processor' from `hpack_filter'.
+Removing  `ltj.main' from `hpack_filter'.
+Removing  `luaotfload.harf.finalize_hlist' from `hpack_filter'.
+Removing  `ltj.create_dir_whatsit' from `hpack_filter'.
+Inserting `ltj.adjust_icflag' in `hpack_filter'.
+Inserting `ltj.set_stack_level' in `hpack_filter'.
+Inserting `luaotfload.node_processor' in `hpack_filter'.
+Inserting `ltj.main' in `hpack_filter'.
+Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
+Inserting `ltj.create_dir_whatsit' in `hpack_filter'.
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/ltj-base.sty
+Package: ltj-base 2021-03-16
+\ltj@tempcntb=\count281
+\ltj@tempcntc=\count282
+\ltj@afbox=\box53
+)
+\ltj@@italic@inner=\luafunction31
+\ltj@@start@time@measure@inner=\luafunction32
+\ltj@@stop@time@measure@inner=\luafunction33
+\ltj@@jfont@inner=\luafunction34
+\ltj@zw@inner=\luafunction35
+\ltj@zh@inner=\luafunction36
+\ltj@reset@globaldefs@inner=\luafunction37
+\ltj@restore@globaldefs@inner=\luafunction38
+\ltj@@disihb@inner=\luafunction39
+\ltj@@ihb@inner=\luafunction40
+\ltj@@fakeparbegin@inner=\luafunction41
+\ltj@@fakeboxbdd@inner=\luafunction42
+\ltj@@ins@xk@inner=\luafunction43
+\ltj@@ins@k@inner=\luafunction44
+\ltjsetkanjiskip@inner=\luafunction45
+\ltjsetxkanjiskip@inner=\luafunction46
+\ltj@@getparam@one@inner=\luafunction47
+\ltj@alljachar@inner=\luafunction48
+\ltj@@lua@populate@insertwhatsit@inner=\luafunction49
+\ltj@@vadjust@begin@inner=\luafunction50
+\ltj@@vadjust@dirhook@inner=\luafunction51
+\ltj@@vadjust@check@dir@inner=\luafunction52
+\ltj@@box@dirhook@inner=\luafunction53
+\ltj@@reset@badness@inner=\luafunction54
+\ltj@@lua@raisebox@inner=\luafunction55
+\ltj@@vsplit@inner=\luafunction56
+\ltj@@lua@unboxcheckdir@inner=\luafunction57
+\ltj@@lua@uncopycheckdir@inner=\luafunction58
+\ltj@@lua@uncopy@restore@whatsit@inner=\luafunction59
+
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/ltj-kinsoku.tex(save cac
+he: /usr/local/texlive/2026/texmf-var/luatexja/ltj-kinsoku_default.lua.gz)(save 
+cache: /usr/local/texlive/2026/texmf-var/luatexja/ltj-kinsoku_default.luc))
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/ltj-latex.sty
+Package: ltj-latex 2026-05-17 LaTeX support of LuaTeX-ja
+Inserting `ltj.direction' in `pre_shipout_filter'.
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/patches/lltjfont.sty
+Package: lltjfont 2026-03-15 Patch to NFSS2 for LuaTeX-ja
+\ltj@@latex@plv=\count283
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2025/07/18 v2.1d Standard LaTeX file
+\@remove@tlig@@@=\luafunction60
+LaTeX Font Info:    Redeclaring font encoding TU on input line 105.
+LaTeX Encoding Info:    Redeclaring text command \textquotesingle (encoding TU)
+ on input line 148.
+LaTeX Encoding Info:    Redeclaring text command \textasciigrave (encoding TU) 
+on input line 149.
+LaTeX Encoding Info:    Redeclaring text command \textquotedbl (encoding TU) on
+ input line 150.
+LaTeX Encoding Info:    Redeclaring text command \textdollar (encoding TU) on i
+nput line 151.
+LaTeX Encoding Info:    Redeclaring text command \textless (encoding TU) on inp
+ut line 152.
+LaTeX Encoding Info:    Redeclaring text command \textgreater (encoding TU) on 
+input line 153.
+LaTeX Encoding Info:    Redeclaring text command \textbackslash (encoding TU) o
+n input line 154.
+LaTeX Encoding Info:    Redeclaring text command \textasciicircum (encoding TU)
+ on input line 155.
+LaTeX Encoding Info:    Redeclaring text command \textunderscore (encoding TU) 
+on input line 156.
+LaTeX Encoding Info:    Redeclaring text command \textbraceleft (encoding TU) o
+n input line 157.
+LaTeX Encoding Info:    Redeclaring text command \textbar (encoding TU) on inpu
+t line 158.
+LaTeX Encoding Info:    Redeclaring text command \textbraceright (encoding TU) 
+on input line 159.
+LaTeX Encoding Info:    Redeclaring text command \textasciitilde (encoding TU) 
+on input line 160.
+LaTeX Encoding Info:    Redeclaring text command \textexclamdown (encoding TU) 
+on input line 161.
+LaTeX Encoding Info:    Redeclaring text command \textcent (encoding TU) on inp
+ut line 162.
+LaTeX Encoding Info:    Redeclaring text command \textsterling (encoding TU) on
+ input line 163.
+LaTeX Encoding Info:    Redeclaring text command \textcurrency (encoding TU) on
+ input line 164.
+LaTeX Encoding Info:    Redeclaring text command \textyen (encoding TU) on inpu
+t line 165.
+LaTeX Encoding Info:    Redeclaring text command \textbrokenbar (encoding TU) o
+n input line 166.
+LaTeX Encoding Info:    Redeclaring text command \textsection (encoding TU) on 
+input line 167.
+LaTeX Encoding Info:    Redeclaring text command \textasciidieresis (encoding T
+U) on input line 168.
+LaTeX Encoding Info:    Redeclaring text command \textcopyright (encoding TU) o
+n input line 169.
+LaTeX Encoding Info:    Redeclaring text command \textordfeminine (encoding TU)
+ on input line 170.
+LaTeX Encoding Info:    Redeclaring text command \guillemetleft (encoding TU) o
+n input line 171.
+LaTeX Encoding Info:    Redeclaring text command \guillemotleft (encoding TU) o
+n input line 172.
+LaTeX Encoding Info:    Redeclaring text command \textlnot (encoding TU) on inp
+ut line 173.
+LaTeX Encoding Info:    Redeclaring text command \textregistered (encoding TU) 
+on input line 174.
+LaTeX Encoding Info:    Redeclaring text command \textasciimacron (encoding TU)
+ on input line 175.
+LaTeX Encoding Info:    Redeclaring text command \textdegree (encoding TU) on i
+nput line 176.
+LaTeX Encoding Info:    Redeclaring text command \textpm (encoding TU) on input
+ line 177.
+LaTeX Encoding Info:    Redeclaring text command \texttwosuperior (encoding TU)
+ on input line 178.
+LaTeX Encoding Info:    Redeclaring text command \textthreesuperior (encoding T
+U) on input line 179.
+LaTeX Encoding Info:    Redeclaring text command \textasciiacute (encoding TU) 
+on input line 180.
+LaTeX Encoding Info:    Redeclaring text command \textmu (encoding TU) on input
+ line 181.
+LaTeX Encoding Info:    Redeclaring text command \textparagraph (encoding TU) o
+n input line 182.
+LaTeX Encoding Info:    Redeclaring text command \textperiodcentered (encoding 
+TU) on input line 183.
+LaTeX Encoding Info:    Redeclaring text command \textonesuperior (encoding TU)
+ on input line 184.
+LaTeX Encoding Info:    Redeclaring text command \textordmasculine (encoding TU
+) on input line 185.
+LaTeX Encoding Info:    Redeclaring text command \guillemetright (encoding TU) 
+on input line 186.
+LaTeX Encoding Info:    Redeclaring text command \guillemotright (encoding TU) 
+on input line 187.
+LaTeX Encoding Info:    Redeclaring text command \textonequarter (encoding TU) 
+on input line 188.
+LaTeX Encoding Info:    Redeclaring text command \textonehalf (encoding TU) on 
+input line 189.
+LaTeX Encoding Info:    Redeclaring text command \textthreequarters (encoding T
+U) on input line 190.
+LaTeX Encoding Info:    Redeclaring text command \textquestiondown (encoding TU
+) on input line 191.
+LaTeX Encoding Info:    Redeclaring text command \AE (encoding TU) on input lin
+e 192.
+LaTeX Encoding Info:    Redeclaring text command \DH (encoding TU) on input lin
+e 193.
+LaTeX Encoding Info:    Redeclaring text command \texttimes (encoding TU) on in
+put line 194.
+LaTeX Encoding Info:    Redeclaring text command \O (encoding TU) on input line
+ 195.
+LaTeX Encoding Info:    Redeclaring text command \TH (encoding TU) on input lin
+e 196.
+LaTeX Encoding Info:    Redeclaring text command \ss (encoding TU) on input lin
+e 197.
+LaTeX Encoding Info:    Redeclaring text command \ae (encoding TU) on input lin
+e 198.
+LaTeX Encoding Info:    Redeclaring text command \dh (encoding TU) on input lin
+e 199.
+LaTeX Encoding Info:    Redeclaring text command \textdiv (encoding TU) on inpu
+t line 200.
+LaTeX Encoding Info:    Redeclaring text command \o (encoding TU) on input line
+ 201.
+LaTeX Encoding Info:    Redeclaring text command \th (encoding TU) on input lin
+e 202.
+LaTeX Encoding Info:    Redeclaring text command \DJ (encoding TU) on input lin
+e 203.
+LaTeX Encoding Info:    Redeclaring text command \dj (encoding TU) on input lin
+e 204.
+LaTeX Encoding Info:    Redeclaring text command \i (encoding TU) on input line
+ 205.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding TU) on input lin
+e 206.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding TU) on input lin
+e 207.
+LaTeX Encoding Info:    Redeclaring text command \L (encoding TU) on input line
+ 208.
+LaTeX Encoding Info:    Redeclaring text command \l (encoding TU) on input line
+ 209.
+LaTeX Encoding Info:    Redeclaring text command \NG (encoding TU) on input lin
+e 210.
+LaTeX Encoding Info:    Redeclaring text command \ng (encoding TU) on input lin
+e 211.
+LaTeX Encoding Info:    Redeclaring text command \OE (encoding TU) on input lin
+e 212.
+LaTeX Encoding Info:    Redeclaring text command \oe (encoding TU) on input lin
+e 213.
+LaTeX Encoding Info:    Redeclaring text command \textflorin (encoding TU) on i
+nput line 214.
+LaTeX Encoding Info:    Redeclaring text command \j (encoding TU) on input line
+ 215.
+LaTeX Encoding Info:    Redeclaring text command \textasciicaron (encoding TU) 
+on input line 216.
+LaTeX Encoding Info:    Redeclaring text command \textasciibreve (encoding TU) 
+on input line 217.
+LaTeX Encoding Info:    Redeclaring text command \textacutedbl (encoding TU) on
+ input line 218.
+LaTeX Encoding Info:    Redeclaring text command \textgravedbl (encoding TU) on
+ input line 219.
+LaTeX Encoding Info:    Redeclaring text command \texttildelow (encoding TU) on
+ input line 220.
+LaTeX Encoding Info:    Redeclaring text command \textbaht (encoding TU) on inp
+ut line 221.
+LaTeX Encoding Info:    Redeclaring text command \SS (encoding TU) on input lin
+e 222.
+LaTeX Encoding Info:    Redeclaring text command \textcompwordmark (encoding TU
+) on input line 223.
+LaTeX Encoding Info:    Redeclaring text command \textendash (encoding TU) on i
+nput line 224.
+LaTeX Encoding Info:    Redeclaring text command \textemdash (encoding TU) on i
+nput line 225.
+LaTeX Encoding Info:    Redeclaring text command \textnonbreakinghyphen (encodi
+ng TU) on input line 226.
+LaTeX Encoding Info:    Redeclaring text command \textfiguredash (encoding TU) 
+on input line 228.
+LaTeX Encoding Info:    Redeclaring text command \texthorizontalbar (encoding T
+U) on input line 230.
+LaTeX Encoding Info:    Redeclaring text command \textbardbl (encoding TU) on i
+nput line 232.
+LaTeX Encoding Info:    Redeclaring text command \textquoteleft (encoding TU) o
+n input line 233.
+LaTeX Encoding Info:    Redeclaring text command \textquoteright (encoding TU) 
+on input line 234.
+LaTeX Encoding Info:    Redeclaring text command \quotesinglbase (encoding TU) 
+on input line 235.
+LaTeX Encoding Info:    Redeclaring text command \textquotedblleft (encoding TU
+) on input line 236.
+LaTeX Encoding Info:    Redeclaring text command \textquotedblright (encoding T
+U) on input line 237.
+LaTeX Encoding Info:    Redeclaring text command \quotedblbase (encoding TU) on
+ input line 238.
+LaTeX Encoding Info:    Redeclaring text command \textdagger (encoding TU) on i
+nput line 239.
+LaTeX Encoding Info:    Redeclaring text command \textdaggerdbl (encoding TU) o
+n input line 240.
+LaTeX Encoding Info:    Redeclaring text command \textbullet (encoding TU) on i
+nput line 241.
+LaTeX Encoding Info:    Redeclaring text command \textellipsis (encoding TU) on
+ input line 242.
+LaTeX Encoding Info:    Redeclaring text command \textperthousand (encoding TU)
+ on input line 243.
+LaTeX Encoding Info:    Redeclaring text command \textpertenthousand (encoding 
+TU) on input line 244.
+LaTeX Encoding Info:    Redeclaring text command \guilsinglleft (encoding TU) o
+n input line 245.
+LaTeX Encoding Info:    Redeclaring text command \guilsinglright (encoding TU) 
+on input line 246.
+LaTeX Encoding Info:    Redeclaring text command \textreferencemark (encoding T
+U) on input line 247.
+LaTeX Encoding Info:    Redeclaring text command \textinterrobang (encoding TU)
+ on input line 248.
+LaTeX Encoding Info:    Redeclaring text command \textfractionsolidus (encoding
+ TU) on input line 249.
+LaTeX Encoding Info:    Redeclaring text command \textlquill (encoding TU) on i
+nput line 250.
+LaTeX Encoding Info:    Redeclaring text command \textrquill (encoding TU) on i
+nput line 251.
+LaTeX Encoding Info:    Redeclaring text command \textdiscount (encoding TU) on
+ input line 252.
+LaTeX Encoding Info:    Redeclaring text command \textcolonmonetary (encoding T
+U) on input line 253.
+LaTeX Encoding Info:    Redeclaring text command \textlira (encoding TU) on inp
+ut line 254.
+LaTeX Encoding Info:    Redeclaring text command \textnaira (encoding TU) on in
+put line 255.
+LaTeX Encoding Info:    Redeclaring text command \textwon (encoding TU) on inpu
+t line 256.
+LaTeX Encoding Info:    Redeclaring text command \textdong (encoding TU) on inp
+ut line 257.
+LaTeX Encoding Info:    Redeclaring text command \texteuro (encoding TU) on inp
+ut line 258.
+LaTeX Encoding Info:    Redeclaring text command \textpeso (encoding TU) on inp
+ut line 259.
+LaTeX Encoding Info:    Redeclaring text command \textcelsius (encoding TU) on 
+input line 260.
+LaTeX Encoding Info:    Redeclaring text command \textnumero (encoding TU) on i
+nput line 261.
+LaTeX Encoding Info:    Redeclaring text command \textcircledP (encoding TU) on
+ input line 262.
+LaTeX Encoding Info:    Redeclaring text command \textrecipe (encoding TU) on i
+nput line 263.
+LaTeX Encoding Info:    Redeclaring text command \textservicemark (encoding TU)
+ on input line 264.
+LaTeX Encoding Info:    Redeclaring text command \texttrademark (encoding TU) o
+n input line 265.
+LaTeX Encoding Info:    Redeclaring text command \textohm (encoding TU) on inpu
+t line 266.
+LaTeX Encoding Info:    Redeclaring text command \textmho (encoding TU) on inpu
+t line 267.
+LaTeX Encoding Info:    Redeclaring text command \textestimated (encoding TU) o
+n input line 268.
+LaTeX Encoding Info:    Redeclaring text command \textleftarrow (encoding TU) o
+n input line 269.
+LaTeX Encoding Info:    Redeclaring text command \textuparrow (encoding TU) on 
+input line 270.
+LaTeX Encoding Info:    Redeclaring text command \textrightarrow (encoding TU) 
+on input line 271.
+LaTeX Encoding Info:    Redeclaring text command \textdownarrow (encoding TU) o
+n input line 272.
+LaTeX Encoding Info:    Redeclaring text command \textminus (encoding TU) on in
+put line 273.
+LaTeX Encoding Info:    Redeclaring text command \Hwithstroke (encoding TU) on 
+input line 275.
+LaTeX Encoding Info:    Redeclaring text command \hwithstroke (encoding TU) on 
+input line 276.
+LaTeX Encoding Info:    Redeclaring text command \textasteriskcentered (encodin
+g TU) on input line 277.
+LaTeX Encoding Info:    Redeclaring text command \textsurd (encoding TU) on inp
+ut line 288.
+LaTeX Encoding Info:    Redeclaring text command \textlangle (encoding TU) on i
+nput line 289.
+LaTeX Encoding Info:    Redeclaring text command \textrangle (encoding TU) on i
+nput line 290.
+LaTeX Encoding Info:    Redeclaring text command \textblank (encoding TU) on in
+put line 291.
+LaTeX Encoding Info:    Redeclaring text command \textvisiblespace (encoding TU
+) on input line 292.
+LaTeX Encoding Info:    Redeclaring text command \textopenbullet (encoding TU) 
+on input line 293.
+LaTeX Encoding Info:    Redeclaring text command \textbigcircle (encoding TU) o
+n input line 294.
+LaTeX Encoding Info:    Redeclaring text command \textmusicalnote (encoding TU)
+ on input line 295.
+LaTeX Encoding Info:    Redeclaring text command \textmarried (encoding TU) on 
+input line 296.
+LaTeX Encoding Info:    Redeclaring text command \textdivorced (encoding TU) on
+ input line 297.
+LaTeX Encoding Info:    Redeclaring text command \textinterrobangdown (encoding
+ TU) on input line 298.
+LaTeX Encoding Info:    Redeclaring text command \` (encoding TU) on input line
+ 299.
+LaTeX Encoding Info:    Redeclaring text command \' (encoding TU) on input line
+ 300.
+LaTeX Encoding Info:    Redeclaring text command \^ (encoding TU) on input line
+ 301.
+LaTeX Encoding Info:    Redeclaring text command \~ (encoding TU) on input line
+ 302.
+LaTeX Encoding Info:    Redeclaring text command \= (encoding TU) on input line
+ 303.
+LaTeX Encoding Info:    Redeclaring text command \u (encoding TU) on input line
+ 304.
+LaTeX Encoding Info:    Redeclaring text command \. (encoding TU) on input line
+ 305.
+LaTeX Encoding Info:    Redeclaring text command \" (encoding TU) on input line
+ 306.
+LaTeX Encoding Info:    Redeclaring text command \r (encoding TU) on input line
+ 307.
+LaTeX Encoding Info:    Redeclaring text command \H (encoding TU) on input line
+ 308.
+LaTeX Encoding Info:    Redeclaring text command \v (encoding TU) on input line
+ 309.
+LaTeX Encoding Info:    Redeclaring text command \b (encoding TU) on input line
+ 310.
+LaTeX Encoding Info:    Redeclaring text command \d (encoding TU) on input line
+ 311.
+LaTeX Encoding Info:    Redeclaring text command \c (encoding TU) on input line
+ 312.
+LaTeX Encoding Info:    Redeclaring text command \k (encoding TU) on input line
+ 313.
+LaTeX Encoding Info:    Redeclaring text command \textcommabelow (encoding TU) 
+on input line 314.
+)
+\Cht=\dimen153
+\cht=\dimen154
+\Cdp=\dimen155
+\cdp=\dimen156
+\Cwd=\dimen157
+\cwd=\dimen158
+\Cvs=\dimen159
+\cvs=\dimen160
+\Chs=\dimen161
+\chs=\dimen162
+\cHT=\dimen163
+\dstrutbox=\box54
+\tstrutbox=\box55
+\zstrutbox=\box56
+LaTeX Info: Redefining \strut on input line 71.
+\ltj@@add@fenc@@inner=\luafunction61
+\ltj@@add@kyenc@@inner=\luafunction62
+\ltj@@add@ktenc@@inner=\luafunction63
+\ltj@@is@kyenc@@inner=\luafunction64
+\ltj@@is@ktenc@@inner=\luafunction65
+\ltj@@is@kenc@@inner=\luafunction66
+\ltj@@is@ffam@@inner=\luafunction67
+\ltj@@add@ffam@@inner=\luafunction68
+\ltj@@add@kfam@@inner=\luafunction69
+\ltj@@adjust@baseline@inner=\luafunction70
+LaTeX Info: Redefining \fontencoding on input line 573.
+LaTeX Info: Redefining \fontfamily on input line 619.
+LaTeX Info: Redefining \fontseries on input line 813.
+LaTeX Info: Redefining \fontseriesforce on input line 814.
+LaTeX Info: Redefining \fontshape on input line 822.
+LaTeX Info: Redefining \fontshapeforce on input line 833.
+\ltj@@jfont@@jfmonly@@inner=\luafunction71
+\ltj@@does@alt@set@@inner=\luafunction72
+\ltj@@cipath@clear@inner=\luafunction73
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/patches/lltjdefs.sty
+Package: lltjdefs 2024-05-16 Default font settings of LuaTeX-ja
+luaotfload | db : Font names database loaded from /usr/local/texlive/2026/texmf-
+var/luatex-cache/generic/names/luaotfload-names.luc.gz(save cache: /usr/local/te
+xlive/2026/texmf-var/luatexja/extra_lmroman10-regular.lua.gz)(save cache: /usr/l
+ocal/texlive/2026/texmf-var/luatexja/extra_lmroman10-regular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 69.
+
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/jfm-ujisv.lua)
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 69.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_haranoajimincho-re
+gular.lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_haran
+oajimincho-regular.luc)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/jfm-ujis.lua)
+\symmincho=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mincho' in version `bold'
+(Font)                  JY3/mc/m/n --> JY3/gt/m/n on input line 78.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/patches/lltjcore.sty
+Package: lltjcore 2026-05-17 Patch to LaTeX2e Kernel for LuaTeX-ja
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2026-06-18 L3 programming layer (loader) 
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
+File: l3backend-luatex.def 2026-02-18 L3 backend support: PDF output (LuaTeX)
+\l__color_backend_stack_int=\count284
+Inserting `l3color' in `luaotfload.parse_color'.))
+\@tombowwidth=\dimen164
+\@TL=\box57
+\@Tl=\box58
+\@TC=\box59
+\@TR=\box60
+\@Tr=\box61
+\@BL=\box62
+\@Bl=\box63
+\@BC=\box64
+\@BR=\box65
+\@Br=\box66
+\@CL=\box67
+\@CR=\box68
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmmono9-regular.lu
+a.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmmono9-regul
+ar.luc)
+\@bannertoken=\toks27
+\@@paperheight=\dimen165
+\@@paperwidth=\dimen166
+\@@topmargin=\dimen167
+LaTeX Info: Redefining \underline on input line 311.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/patches/lltjp-atbegshi.
+sty
+Package: lltjp-atbegshi 2024-05-14 Patching \shipout hooks for LuaTeX-ja
+\l__platex_shipout_dummy_box=\box69
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.
+sty
+Package: lltjp-geometry 2024-05-16 Patch to geometry for LuaTeX-ja with vertica
+l writing mode
+ (/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)))
+\ltj@temp@cctb=\catcodetable16
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/luatexja-compat.sty
+Package: luatexja-compat 2025-09-21 Compatibility with pTeX
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/ltj-jisx0208.luc)
+\hour=\count285
+\minute=\count286
+))
+\jsc@mpt=\dimen168
+\jsc@mmm=\dimen169
+\ltjs@@magnify@font@calc=\luafunction74
+\jsc@smallskipamount=\skip49
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman9-regular.l
+ua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman9-reg
+ular.luc)
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 421.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 421.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 421.
+\fullwidth=\dimen170
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman8-regular.l
+ua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman8-reg
+ular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 7.3977pt on input line 548.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 7.3977pt on input line 548.
+\c@part=\count287
+\c@chapter=\count288
+\c@section=\count289
+\c@subsection=\count290
+\c@subsubsection=\count291
+\c@paragraph=\count292
+\c@subparagraph=\count293
+\@abstractbox=\box70
+\c@figure=\count294
+\c@table=\count295
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+LaTeX Info: Redefining \mc on input line 1411.
+LaTeX Info: Redefining \gt on input line 1412.
+\jsc@tocl@width=\dimen171
+\@lnumwidth=\dimen172
+\bibindent=\dimen173
+
+(/usr/local/texlive/2026/texmf-dist/tex/platex/jsclasses/jslogo.sty
+Package: jslogo 2019/07/25 okumura, texjporg
+LaTeX Info: Redefining \TeX on input line 82.
+LaTeX Info: Redefining \LaTeX on input line 135.
+LaTeX Info: Redefining \LaTeXe on input line 188.
+)
+\heisei=\count296
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2026/05/19 v2.18d AMS math features
+\@mathmargin=\skip52
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks28
+\ex@=\dimen174
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen175
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count297
+LaTeX Info: Redefining \frac on input line 235.
+\uproot@=\count298
+\leftroot@=\count299
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count300
+\DOTSCASE@=\count301
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box71
+\strutbox@=\box72
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen176
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count302
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count303
+\dotsspace@=\muskip17
+\c@parentequation=\count304
+\dspbrk@lvl=\count305
+\tag@help=\toks29
+\row@=\count306
+\column@=\count307
+\maxfields@=\count308
+\andhelp@=\toks30
+\eqnshift@=\dimen177
+\alignsep@=\dimen178
+\tagshift@=\dimen179
+\tagwidth@=\dimen180
+\totwidth@=\dimen181
+\lineht@=\dimen182
+\@envbody=\toks31
+\multlinegap=\skip53
+\multlinetaggap=\skip54
+\mathdisplay@stack=\toks32
+LaTeX Info: Redefining \[ on input line 2965.
+LaTeX Info: Redefining \] on input line 2966.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup5
+\symAMSb=\mathgroup6
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 106.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
+))
+\Gin@req@height=\dimen183
+\Gin@req@width=\dimen184
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen185
+\lightrulewidth=\dimen186
+\cmidrulewidth=\dimen187
+\belowrulesep=\dimen188
+\belowbottomsep=\dimen189
+\aboverulesep=\dimen190
+\abovetopsep=\dimen191
+\cmidrulesep=\dimen192
+\cmidrulekern=\dimen193
+\defaultaddspace=\dimen194
+\@cmidla=\count309
+\@cmidlb=\count310
+\@aboverulesep=\dimen195
+\@belowrulesep=\dimen196
+\@thisruleclass=\count311
+\@lastruleclass=\count312
+\@thisrulewidth=\dimen197
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty
+Package: array 2026/02/24 v2.7b Tabular extension package (FMi)
+\col@sep=\dimen198
+\ar@mcellbox=\box73
+\extrarowheight=\dimen199
+\NC@list=\toks33
+\extratabsurround=\skip55
+\backup@length=\skip56
+\ar@cellbox=\box74
+)
+\TX@col@width=\dimen256
+\TX@old@table=\dimen257
+\TX@old@col=\dimen258
+\TX@target=\dimen259
+\TX@delta=\dimen260
+\TX@cols=\count313
+\TX@ftn=\toks34
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count314
+\Gm@cntv=\count315
+\c@Gm@tempcnt=\count316
+\Gm@bindingoffset=\dimen261
+\Gm@wd@mp=\dimen262
+\Gm@odd@mp=\dimen263
+\Gm@even@mp=\dimen264
+\Gm@layoutwidth=\dimen265
+\Gm@layoutheight=\dimen266
+\Gm@layouthoffset=\dimen267
+\Gm@layoutvoffset=\dimen268
+\Gm@dimlist=\toks35
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen269
+\captionmargin=\dimen270
+\caption@leftmargin=\dimen271
+\caption@rightmargin=\dimen272
+\caption@width=\dimen273
+\caption@indent=\dimen274
+\caption@parindent=\dimen275
+\caption@hangindent=\dimen276
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+Package caption Info: \@makecaption = \long macro:#1#2->{\small \advance \lefts
+kip .0628\linewidth \advance \rightskip .0628\linewidth \vskip \abovecaptionski
+p \sbox \@tempboxa {#1{\hskip 1\zw }#2}\ifdim \wd \@tempboxa <\hsize \centering
+ \fi #1{\hskip 1\zw }#2\par \vskip \belowcaptionskip } on input line 1175.
+)
+
+Package caption Warning: Unknown document class (or package),
+(caption)                standard defaults will be used.
+See the caption package documentation for explanation.
+
+\c@caption@flags=\count317
+\c@continuedfloat=\count318
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip18
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count319
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
+)
+\@linkdim=\dimen277
+\Hy@linkcounter=\count320
+\Hy@pagecounter=\count321
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count322
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
+)
+Package hyperref Info: Hyper figures OFF on input line 4199.
+Package hyperref Info: Link nesting OFF on input line 4204.
+Package hyperref Info: Hyper index ON on input line 4207.
+Package hyperref Info: Plain pages OFF on input line 4214.
+Package hyperref Info: Backreferencing OFF on input line 4219.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4466.
+\c@Hy@tempcnt=\count323
+LaTeX Info: Redefining \url on input line 4805.
+\XeTeXLinkMargin=\dimen278
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count324
+\Field@Width=\dimen279
+\Fld@charsize=\dimen280
+Package hyperref Info: Hyper figures OFF on input line 6091.
+Package hyperref Info: Link nesting OFF on input line 6096.
+Package hyperref Info: Hyper index ON on input line 6099.
+Package hyperref Info: backreferencing OFF on input line 6106.
+Package hyperref Info: Link coloring OFF on input line 6111.
+Package hyperref Info: Link coloring with OCG OFF on input line 6116.
+Package hyperref Info: PDF/A mode OFF on input line 6121.
+\Hy@abspage=\count325
+\c@Item=\count326
+\c@Hfootnote=\count327
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2026-06-17 v7.01r Hyperref driver for luaTeX
+\Fld@listcount=\count328
+\c@bookmark@seq@number=\count329
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
+)
+\Hy@SectionHShift=\skip57
+)
+(/usr/local/texlive/2026/texmf-dist/tex/luatex/luatexja/patches/lltjp-array.sty
+Package: lltjp-array 2026-05-13 Patch to array for LuaTeX-ja
+lltjp-array: patch FAILED (\@tabular 2)
+)
+No file thesis-split.aux.
+
+\openout1 = thesis-split.aux
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for JY3/mc/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for JT3/mc/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count330
+\scratchdimen=\dimen281
+\scratchbox=\box75
+\nofMPsegments=\count331
+\nofMParguments=\count332
+\everyMPshowfont=\toks36
+\MPscratchCnt=\count333
+\MPscratchDim=\dimen282
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
+\everyMPtoPDFconversion=\toks37
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: luatex
+*geometry* verbose mode - [ preamble ] result:
+* driver: luatex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(79.66771pt, 438.17245pt, 79.66771pt)
+* v-part:(T,H,B)=(85.35826pt, 674.33032pt, 85.35826pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=438.17245pt
+* \textheight=674.33032pt
+* \oddsidemargin=7.39772pt
+* \evensidemargin=7.39772pt
+* \topmargin=-23.29626pt
+* \headheight=21.90002pt
+* \headsep=14.48451pt
+* \topskip=13.9734pt
+* \footskip=28.45792pt
+* \marginparwidth=20.25125pt
+* \marginparsep=20.25125pt
+* \columnsep=20.25125pt
+* \skip\footins=17.52002pt plus 5.475pt minus 2.19pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
+Package hyperref Info: Link coloring OFF on input line 50.
+\@outlinefile=\write3
+
+\openout3 = thesis-split.out
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman17-regular.
+lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman17-r
+egular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 15.97903pt on input line 52.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 15.97903pt on input line 52.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman12-regular.
+lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman12-r
+egular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 52.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 52.
+[1
+
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 23.00685pt on input line 54.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 23.00685pt on input line 54.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 23.00685pt on input line 54.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 23.00685pt on input line 54.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_haranoajigothic-me
+dium.lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_harano
+ajigothic-medium.luc)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/ext
+ra_lmsans17-regular.lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatex
+ja/extra_lmsans17-regular.luc)(save cache: /usr/local/texlive/2026/texmf-var/lua
+texja/extra_lmroman10-bold.lua.gz)(save cache: /usr/local/texlive/2026/texmf-var
+/luatexja/extra_lmroman10-bold.luc)
+LaTeX Font Info:    Font shape `JT3/mc/b/n' in size <10> not available
+(Font)              Font shape `JT3/gt/m/n' tried instead on input line 63.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 63.
+LaTeX Font Info:    Font shape `JY3/mc/b/n' in size <10> not available
+(Font)              Font shape `JY3/gt/m/n' tried instead on input line 63.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 8.44485pt on input line 63.
+LaTeX Font Info:    Calculating math sizes for size <10.95001> on input line 73
+.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 6.47295pt on input line 73.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 73.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
+
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
+
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 111.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 9.24713pt on input line 111.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmsans10-regular.l
+ua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmsans10-reg
+ular.luc)
+warning  (pdf backend): ignoring duplicate destination with the name 'page.1'
+[1
+
+]
+No file thesis-split.toc.
+\tf@toc=\write4
+
+\openout4 = thesis-split.toc
+[2
+
+]
+No file thesis-split.lof.
+\tf@lof=\write5
+
+\openout5 = thesis-split.lof
+[3
+
+]
+No file thesis-split.lot.
+\tf@lot=\write6
+
+\openout6 = thesis-split.lot
+[4
+
+]
+第1章
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 116.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 116.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 116.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 19.17854pt on input line 116.
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 13.31584pt on input line 118.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 13.31584pt on input line 118.
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 13.31584pt on input line 118.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 13.31584pt on input line 118.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmsans12-regular.l
+ua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmsans12-reg
+ular.luc)
+
+LaTeX Warning: Citation `AWSSpot' on page 5 undefined on input line 127.
+
+
+LaTeX Warning: Citation `Lin2022Survey' on page 5 undefined on input line 129.
+
+
+LaTeX Warning: Citation `Ramesh2025' on page 5 undefined on input line 132.
+
+
+LaTeX Warning: Citation `Garg2025' on page 5 undefined on input line 147.
+
+
+LaTeX Warning: Citation `Katayama2022' on page 5 undefined on input line 147.
+
+[5
+
+](save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman7-regular.
+lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman7-re
+gular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 6.47295pt on input line 181.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman5-regular.l
+ua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman5-reg
+ular.luc)
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 181.
+
+
+LaTeX Warning: Reference `eq:intro_waste' on page 6 undefined on input line 234
+.
+
+[6]
+
+LaTeX Warning: Reference `chap:measure' on page 7 undefined on input line 241.
+
+
+LaTeX Warning: Reference `chap:split' on page 7 undefined on input line 245.
+
+
+LaTeX Warning: Reference `chap:plan' on page 7 undefined on input line 248.
+
+
+LaTeX Warning: Reference `chap:measure' on page 7 undefined on input line 262.
+
+
+LaTeX Warning: Reference `chap:measure' on page 7 undefined on input line 266.
+
+
+LaTeX Warning: Reference `chap:split' on page 7 undefined on input line 273.
+
+
+LaTeX Warning: Reference `chap:split' on page 7 undefined on input line 278.
+
+
+LaTeX Warning: Reference `chap:split' on page 7 undefined on input line 283.
+
+
+LaTeX Warning: Reference `chap:split' on page 7 undefined on input line 287.
+
+
+LaTeX Warning: Reference `chap:plan' on page 7 undefined on input line 290.
+
+
+LaTeX Warning: Reference `chap:related' on page 7 undefined on input line 295.
+
+
+LaTeX Warning: Reference `chap:measure' on page 7 undefined on input line 296.
+
+
+LaTeX Warning: Reference `chap:split' on page 7 undefined on input line 298.
+
+
+LaTeX Warning: Reference `chap:plan' on page 7 undefined on input line 299.
+
+
+LaTeX Warning: Reference `chap:conclusion' on page 7 undefined on input line 30
+0.
+
+[7] [8]
+第2章
+
+LaTeX Warning: Citation `Lin2022Survey' on page 9 undefined on input line 310.
+
+
+LaTeX Warning: Citation `AWSSPS' on page 9 undefined on input line 318.
+
+
+LaTeX Warning: Citation `Katayama2022' on page 9 undefined on input line 319.
+
+
+LaTeX Warning: Citation `Kim2024SpotInterruption' on page 9 undefined on input 
+line 328.
+
+
+LaTeX Warning: Citation `Lee2022SpotLake' on page 9 undefined on input line 331
+.
+
+
+LaTeX Warning: Citation `Lin2022Survey' on page 9 undefined on input line 345.
+
+[9
+
+]
+
+LaTeX Warning: Reference `tab:related' on page 10 undefined on input line 362.
+
+LaTeX Font Info:    Font shape `JT3/mc/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 366.
+LaTeX Font Info:    Font shape `JY3/mc/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 366.
+(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman9-bold.lua.
+gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmroman9-bold.l
+uc)
+
+LaTeX Warning: Citation `AWSSPS' on page 10 undefined on input line 390.
+
+
+LaTeX Warning: Citation `Katayama2022' on page 10 undefined on input line 390.
+
+
+LaTeX Warning: Citation `Kim2024SpotInterruption' on page 10 undefined on input
+ line 390.
+
+
+LaTeX Warning: Citation `Lee2022SpotLake' on page 10 undefined on input line 39
+0.
+
+
+LaTeX Warning: Citation `Lin2022Survey' on page 10 undefined on input line 390.
+
+
+[10]
+第3章
+
+LaTeX Warning: Reference `chap:split' on page 11 undefined on input line 399.
+
+
+LaTeX Warning: Reference `eq:intro_waste' on page 11 undefined on input line 40
+0.
+
+
+LaTeX Warning: Reference `chap:split' on page 11 undefined on input line 415.
+
+LaTeX Font Info:    Font shape `JT3/gt/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 419.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 11.09656pt on input line 419.
+[11
+
+]
+
+LaTeX Warning: Reference `eq:rlaunch' on page 12 undefined on input line 472.
+
+
+LaTeX Warning: Reference `eq:rint' on page 12 undefined on input line 472.
+
+
+LaTeX Warning: Reference `fig:framework' on page 12 undefined on input line 478
+.
+
+<images/artect.png, id=105, 781.83pt x 332.223pt>
+File: images/artect.png Graphic file (type png)
+<use images/artect.png>
+Package luatex.def Info: images/artect.png  used on input line 485.
+(luatex.def)             Requested size: 438.17245pt x 186.19568pt.
+[12<./images/artect.png>]
+
+LaTeX Warning: Citation `Pham2018' on page 13 undefined on input line 508.
+
+
+LaTeX Warning: Citation `AWSInstanceTypes' on page 13 undefined on input line 5
+08.
+
+
+LaTeX Warning: Reference `tab:specs' on page 13 undefined on input line 509.
+
+
+LaTeX Warning: Reference `tab:periods' on page 13 undefined on input line 541.
+
+
+LaTeX Warning: Reference `chap:split' on page 13 undefined on input line 542.
+
+[13]
+
+LaTeX Warning: Reference `tab:fcomp_overall' on page 14 undefined on input line
+ 579.
+
+
+LaTeX Warning: Reference `chap:split' on page 14 undefined on input line 596.
+
+
+LaTeX Warning: Reference `fig:heatmap60' on page 14 undefined on input line 600
+.
+
+<images/figure1_fcomp60_heatmap.png, id=127, 916.3836pt x 320.397pt>
+File: images/figure1_fcomp60_heatmap.png Graphic file (type png)
+<use images/figure1_fcomp60_heatmap.png>
+Package luatex.def Info: images/figure1_fcomp60_heatmap.png  used on input line
+ 605.
+(luatex.def)             Requested size: 438.17245pt x 153.19725pt.
+
+LaTeX Warning: Reference `tab:period_var' on page 14 undefined on input line 61
+7.
+
+[14<./images/figure1_fcomp60_heatmap.png>]
+
+LaTeX Warning: Reference `chap:split' on page 15 undefined on input line 640.
+
+
+LaTeX Warning: Reference `chap:split' on page 15 undefined on input line 649.
+
+
+LaTeX Warning: Reference `tab:hazard' on page 15 undefined on input line 663.
+
+
+LaTeX Warning: Reference `fig:hazard' on page 15 undefined on input line 663.
+
+<images/figure3_hazard.png, id=141, 533.44293pt x 250.68657pt>
+File: images/figure3_hazard.png Graphic file (type png)
+<use images/figure3_hazard.png>
+Package luatex.def Info: images/figure3_hazard.png  used on input line 687.
+(luatex.def)             Requested size: 372.44925pt x 175.02802pt.
+
+LaTeX Warning: Reference `chap:plan' on page 15 undefined on input line 704.
+
+[15]
+
+LaTeX Warning: Reference `tab:startup' on page 16 undefined on input line 709.
+
+
+LaTeX Warning: Reference `chap:split' on page 16 undefined on input line 725.
+
+
+LaTeX Warning: Reference `chap:split' on page 16 undefined on input line 741.
+
+[16<./images/figure3_hazard.png>] [17]
+第4章
+
+LaTeX Warning: Reference `sec:question' on page 18 undefined on input line 776.
+
+
+
+LaTeX Warning: Reference `eq:intro_waste' on page 18 undefined on input line 77
+8.
+
+
+LaTeX Warning: Reference `chap:measure' on page 18 undefined on input line 780.
+
+
+
+LaTeX Warning: Reference `tab:fcomp_overall' on page 18 undefined on input line
+ 785.
+
+
+LaTeX Warning: Reference `sec:hazard' on page 18 undefined on input line 787.
+
+
+LaTeX Warning: Reference `sec:two_effects' on page 18 undefined on input line 7
+96.
+
+
+LaTeX Warning: Reference `sec:model' on page 18 undefined on input line 797.
+
+
+LaTeX Warning: Reference `sec:kstar' on page 18 undefined on input line 798.
+
+
+LaTeX Warning: Reference `sec:warning' on page 18 undefined on input line 802.
+
+
+LaTeX Warning: Reference `sec:sensitivity' on page 18 undefined on input line 8
+05.
+
+
+LaTeX Warning: Reference `sec:condition' on page 18 undefined on input line 807
+.
+
+
+LaTeX Warning: Reference `chap:measure' on page 18 undefined on input line 818.
+
+
+
+LaTeX Warning: Reference `tab:split_effect' on page 18 undefined on input line 
+827.
+
+[18
+
+]
+
+LaTeX Warning: Reference `eq:intro_waste' on page 19 undefined on input line 87
+3.
+
+
+LaTeX Warning: Reference `chap:measure' on page 19 undefined on input line 874.
+
+
+
+LaTeX Warning: Reference `chap:measure' on page 19 undefined on input line 878.
+
+
+
+LaTeX Warning: Reference `chap:measure' on page 19 undefined on input line 899.
+
+
+[19]
+
+LaTeX Warning: Reference `chap:measure' on page 20 undefined on input line 924.
+
+
+
+LaTeX Warning: Reference `tab:startup' on page 20 undefined on input line 925.
+
+
+LaTeX Warning: Reference `chap:measure' on page 20 undefined on input line 928.
+
+
+
+LaTeX Warning: Reference `sec:sensitivity' on page 20 undefined on input line 9
+29.
+
+
+LaTeX Warning: Reference `chap:plan' on page 20 undefined on input line 930.
+
+
+LaTeX Warning: Reference `eq:waste' on page 20 undefined on input line 959.
+
+
+LaTeX Warning: Reference `chap:measure' on page 20 undefined on input line 959.
+
+
+
+LaTeX Warning: Reference `tab:ucurve' on page 20 undefined on input line 964.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/bx/n' in size <4.5> not available
+(Font)              size <5> substituted on input line 979.
+
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 8.32242pt on input line 979.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 5.82565pt on input line 979.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 4.16121pt on input line 979.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 6.47295pt on input line 989.
+LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
+(Font)              scaled to size 4.62357pt on input line 989.
+
+LaTeX Warning: Citation `AWSSpot' on page 20 undefined on input line 1006.
+
+[20]
+
+LaTeX Warning: Reference `chap:measure' on page 21 undefined on input line 1039
+.
+
+
+LaTeX Warning: Reference `chap:measure' on page 21 undefined on input line 1048
+.
+
+
+LaTeX Warning: Reference `tab:mode_compare' on page 21 undefined on input line 
+1049.
+
+
+LaTeX Warning: Reference `tab:mode_compare' on page 21 undefined on input line 
+1072.
+
+[21]
+
+LaTeX Warning: Reference `chap:measure' on page 22 undefined on input line 1109
+.
+
+[22]
+
+LaTeX Warning: Citation `AWSSpot' on page 23 undefined on input line 1140.
+
+
+LaTeX Warning: Reference `chap:measure' on page 23 undefined on input line 1149
+.
+
+
+LaTeX Warning: Reference `chap:plan' on page 23 undefined on input line 1151.
+
+
+LaTeX Warning: Reference `tab:strategy_role' on page 23 undefined on input line
+ 1157.
+
+
+LaTeX Warning: Reference `sec:kstar' on page 23 undefined on input line 1185.
+
+
+LaTeX Warning: Reference `sec:sensitivity' on page 23 undefined on input line 1
+185.
+
+
+LaTeX Warning: Reference `sec:condition' on page 23 undefined on input line 118
+5.
+
+
+LaTeX Warning: Reference `tab:mode_compare' on page 23 undefined on input line 
+1194.
+
+
+LaTeX Warning: Reference `sec:kstar' on page 23 undefined on input line 1204.
+
+[23]
+
+LaTeX Warning: Reference `sec:sensitivity' on page 24 undefined on input line 1
+213.
+
+
+LaTeX Warning: Reference `sec:condition' on page 24 undefined on input line 121
+5.
+
+
+LaTeX Warning: Reference `tab:ucurve' on page 24 undefined on input line 1220.
+
+
+LaTeX Warning: Reference `tab:sensitivity' on page 24 undefined on input line 1
+225.
+
+
+LaTeX Warning: Reference `fig:ucurve' on page 24 undefined on input line 1225.
+
+<images/figure4_ucurve.png, id=235, 533.44293pt x 294.04857pt>
+File: images/figure4_ucurve.png Graphic file (type png)
+<use images/figure4_ucurve.png>
+Package luatex.def Info: images/figure4_ucurve.png  used on input line 1249.
+(luatex.def)             Requested size: 394.35252pt x 217.37717pt.
+[24<./images/figure4_ucurve.png>]
+
+LaTeX Warning: Reference `sec:warning_cond' on page 25 undefined on input line 
+1269.
+
+
+LaTeX Warning: Reference `tab:sensitivity' on page 25 undefined on input line 1
+274.
+
+
+LaTeX Warning: Reference `tab:c_regime' on page 25 undefined on input line 1282
+.
+
+
+LaTeX Warning: Reference `sec:condition' on page 25 undefined on input line 130
+8.
+
+
+LaTeX Warning: Reference `tab:sensitivity' on page 25 undefined on input line 1
+330.
+
+
+LaTeX Warning: Reference `chap:measure' on page 25 undefined on input line 1337
+.
+
+
+LaTeX Warning: Reference `tab:period_var' on page 25 undefined on input line 13
+39.
+
+
+LaTeX Warning: Reference `tab:period_k' on page 25 undefined on input line 1343
+.
+
+
+LaTeX Warning: Reference `fig:period_k' on page 25 undefined on input line 1343
+.
+
+<images/figure5_period_k.png, id=244, 443.55713pt x 221.77856pt>
+File: images/figure5_period_k.png Graphic file (type png)
+<use images/figure5_period_k.png>
+Package luatex.def Info: images/figure5_period_k.png  used on input line 1370.
+(luatex.def)             Requested size: 328.62933pt x 164.32336pt.
+
+LaTeX Warning: Reference `tab:period_k' on page 25 undefined on input line 1376
+.
+
+[25]
+
+LaTeX Warning: Reference `tab:period_k' on page 26 undefined on input line 1404
+.
+
+
+LaTeX Warning: Reference `sec:kstar' on page 26 undefined on input line 1409.
+
+
+LaTeX Warning: Reference `chap:measure' on page 26 undefined on input line 1414
+.
+
+[26<./images/figure5_period_k.png>]
+
+LaTeX Warning: Reference `sec:warning' on page 27 undefined on input line 1425.
+
+
+
+LaTeX Warning: Reference `chap:measure' on page 27 undefined on input line 1448
+.
+
+[27]
+第5章
+
+LaTeX Warning: Reference `sec:sensitivity' on page 28 undefined on input line 1
+457.
+
+
+LaTeX Warning: Reference `chap:split' on page 28 undefined on input line 1458.
+
+
+LaTeX Warning: Reference `chap:measure' on page 28 undefined on input line 1463
+.
+
+
+LaTeX Warning: Reference `eq:waste' on page 28 undefined on input line 1496.
+
+
+LaTeX Warning: Reference `sec:hazard' on page 28 undefined on input line 1496.
+
+
+LaTeX Warning: Reference `sec:sensitivity' on page 28 undefined on input line 1
+513.
+
+[28
+
+]
+
+LaTeX Warning: Reference `fig:ucurve' on page 29 undefined on input line 1549.
+
+
+LaTeX Warning: Reference `chap:measure' on page 29 undefined on input line 1579
+.
+
+[29]
+
+LaTeX Warning: Reference `eq:waste' on page 30 undefined on input line 1597.
+
+
+LaTeX Warning: Reference `chap:measure' on page 30 undefined on input line 1640
+.
+
+
+LaTeX Warning: Reference `tab:impl' on page 30 undefined on input line 1641.
+
+
+LaTeX Warning: Reference `sec:split_role' on page 30 undefined on input line 16
+67.
+
+
+LaTeX Warning: Reference `tab:outcome_map' on page 30 undefined on input line 1
+669.
+
+
+LaTeX Warning: Reference `sec:kstar' on page 30 undefined on input line 1693.
+
+[30]
+
+LaTeX Warning: Reference `tab:outcome_map' on page 31 undefined on input line 1
+703.
+
+
+LaTeX Warning: Reference `tab:outcomes' on page 31 undefined on input line 1705
+.
+
+
+LaTeX Warning: Reference `sec:hazard' on page 31 undefined on input line 1765.
+
+[31] [32]
+第6章
+
+LaTeX Warning: Reference `eq:intro_waste' on page 33 undefined on input line 17
+78.
+
+
+LaTeX Warning: Reference `chap:measure' on page 33 undefined on input line 1782
+.
+
+
+LaTeX Warning: Reference `chap:split' on page 33 undefined on input line 1790.
+
+
+LaTeX Warning: Reference `chap:plan' on page 33 undefined on input line 1816.
+
+[33
+
+]
+
+LaTeX Warning: Reference `chap:plan' on page 34 undefined on input line 1846.
+
+[34] [35
+
+](save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmmono10-regular.
+lua.gz)(save cache: /usr/local/texlive/2026/texmf-var/luatexja/extra_lmmono10-re
+gular.luc) [36
+
+] (./thesis-split.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2026-06-18>
+ ***********
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 0.5pt have occurred.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `thesis-split.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `thesis-split.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  A631A7987285F16F052F29A67EDAE243;5509.
+)
+
+Here is how much of LuaTeX's memory you used:
+ 14134 strings out of 475704
+ 195704,794899 words of node,token memory allocated
+ 1576 words of node memory still in use:
+   10 hlist, 2 vlist, 5 rule, 2 glue, 4 kern, 1 glyph, 432 attribute, 57 glue_sp
+ec, 50 attribute_list, 1 write, 13 user_defined, 2 pdf_action nodes
+   avail lists: 1:18,2:53368,3:475,4:354,5:204,6:73,7:5281,8:77,9:2230,10:35,11:
+260
+ 36443 multiletter control sequences out of 65536+600000
+ 97 fonts using 96511415 bytes
+ 119i,13n,115p,2061b,705s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmmono10-regular.ot
+f></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmsans10-regular.
+otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman9-bold.o
+tf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman9-regular
+.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman7-regul
+ar.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman10-bo
+ld.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmsans12-reg
+ular.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmsans17-r
+egular.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/lm/lmroman1
+0-regular.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/public/haranoaj
+i/HaranoAjiGothic-Medium.otf></usr/local/texlive/2026/texmf-dist/fonts/opentype/
+public/lm/lmroman12-regular.otf></usr/local/texlive/2026/texmf-dist/fonts/openty
+pe/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2026/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2026/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2026/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2026/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy6.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy7.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb>
+Output written on thesis-split.pdf (37 pages, 856042 bytes).
+
+PDF statistics: 518 PDF objects out of 1000 (max. 8388607)
+ 399 compressed objects within 4 object streams
+ 210 named destinations out of 1000 (max. 1048576)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
+

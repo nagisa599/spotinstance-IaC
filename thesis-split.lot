@@ -1,0 +1,29 @@
+\addvspace {10\jsc@mpt }
+\addvspace {10\jsc@mpt }
+\contentsline {table}{\numberline {2.1}{\ignorespaces 関連研究と本研究の位置づけ}}{10}{table.caption.5}%
+\addvspace {10\jsc@mpt }
+\contentsline {table}{\numberline {3.1}{\ignorespaces 評価対象インスタンスタイプの仕様。観測スポット価格は観測期間中（2026年5月19日--25日）に 4 リージョンで記録された平均時間単価（USD/h）である。}}{13}{table.caption.8}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces ローカル時間帯の区分}}{13}{table.caption.11}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces 期限 $d$ ごとの $F_{\mathrm {comp}}(d)$（全データをプール，$N_{\mathrm {succ}}= 1{,}950$）}}{14}{table.caption.13}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces N.~Virginia，c6a.large における時間帯別の $F_{\mathrm {comp}}(60)$}}{15}{table.caption.15}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces 経過時間別の中断ハザード率（$N_{\mathrm {succ}}= 1{,}950$，中断 117 件）}}{15}{table.caption.16}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces 起動オーバーヘッドの実測値（$n = 1{,}950$）}}{16}{table.caption.19}%
+\addvspace {10\jsc@mpt }
+\contentsline {table}{\numberline {4.1}{\ignorespaces 断片長 $T$ に対する完了確率と中断時平均損失（全データをプール）}}{19}{table.caption.23}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces ジョブの特徴量}}{19}{table.caption.24}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces 分割数 $k$ に対する総無駄時間（$W_j = 60$ 分，$c = 0$，Wilson LCB）}}{21}{table.caption.27}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces 二つの備え方のコスト構造}}{21}{table.caption.28}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces 二つの備え方の無駄時間（$W_j = 60$ 分，Wilson LCB）。警告駆動復旧の値は，警告が機能し猶予時間内に保存が完了する場合のものである。}}{22}{table.caption.29}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces 条件に応じた備え方の選択}}{23}{table.caption.33}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces チェックポイントコスト $c$ に対する最適分割数 $k^{*}$ の感度。各セルは総無駄時間（分）を表し，太字は各行の最小値を示す。}}{24}{table.caption.35}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces チェックポイントコスト $c$ による対策の選択}}{25}{table.caption.38}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces 時間帯ごとの総無駄時間（分，$W_j = 60$ 分，$c=0$，Wilson LCB）。太字は各行の最小値を示す。}}{26}{table.caption.40}%
+\addvspace {10\jsc@mpt }
+\contentsline {table}{\numberline {5.1}{\ignorespaces 検証の目的と優先順位}}{28}{table.caption.43}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces 対象ワークロードの候補}}{29}{table.caption.44}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces 検証実験の規模とコスト（c6a.large を想定）}}{30}{table.caption.56}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces 既存実装からの変更点}}{31}{table.caption.57}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces 測定結果と導かれる結論の対応}}{31}{table.caption.58}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces チェックポイントコストの実測値に応じた結論}}{31}{table.caption.59}%
+\contentsline {table}{\numberline {5.7}{\ignorespaces 想定されるリスクと対策}}{32}{table.caption.60}%
+\addvspace {10\jsc@mpt }

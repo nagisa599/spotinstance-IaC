@@ -1,0 +1,11 @@
+\addvspace {10\jsc@mpt }
+\addvspace {10\jsc@mpt }
+\addvspace {10\jsc@mpt }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces 測定フレームワーク}}{12}{figure.caption.6}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces 時間帯，リージョン，インスタンスタイプ別の $F_{\mathrm {comp}}(60)$。注釈は値とサンプル数（$n_{\mathrm {comp}}/n_{\mathrm {succ}}$）を示す。}}{14}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces 経過時間別の中断ハザード率。単調増加の傾向は見られず，0.054--0.130 \%/分の範囲で変動する。}}{16}{figure.caption.17}%
+\addvspace {10\jsc@mpt }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces 分割数に対する総無駄時間の U 字カーブ。各曲線はチェックポイントコスト $c$ の値に対応し，二重丸は各曲線の最小点 $k^{*}$ を示す。$c$ の増加とともに $k^{*}$ は左へ移動する。}}{24}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces 時間帯と分割数の組み合わせによる総無駄時間。色が濃いほど無駄時間が大きい。}}{26}{figure.caption.41}%
+\addvspace {10\jsc@mpt }
+\addvspace {10\jsc@mpt }
