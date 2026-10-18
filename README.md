@@ -39,3 +39,4 @@ aws fis create-experiment-template \
 上のコマンドの返り値
 aws fis start-experiment --experiment-template-id <experimentTemplateId>
 ```
+# nagisa-researrch
