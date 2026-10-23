@@ -241,8 +241,8 @@ SPSが通常値のときに起動しており，
 \subsection{同じSPSのもとでの継続性の差}
 
 \begin{table}[tb]
-\caption{SPSが通常値（3）のときの時間帯別の$\Fcomp(60)$
-（c6a.large，4リージョン合計）}
+\caption{SPSが通常値(3)のときの時間帯別の$\Fcomp(60)$
+(c6a.large，4リージョン合計)}
 \label{tab:prelim}
 \centering
 \begin{tabular}{lrcr}\hline\hline
@@ -345,11 +345,11 @@ EventBridgeのスケジュールにより起動用のLambda関数を毎時0分�
 \subsection{実験設定}
 
 \begin{table}[tb]
-\caption{対象インスタンスタイプ（価格は観測期間中の4リージョン平均スポット価格）}
+\caption{対象インスタンスタイプ(価格は観測期間中の4リージョン平均スポット価格)}
 \label{tab:specs}
 \centering
 \begin{tabular}{llr}\hline\hline
-タイプ & 分類 & 価格 (USD/h)\\\hline
+タイプ & 分類 & 価格（USD/h）\\\hline
 c6a.large   & 計算最適化     & 0.039\\
 g4dn.xlarge & GPU（T4）搭載  & 0.307\\
 t3.micro    & バースト可能   & 0.005\\\hline
@@ -395,7 +395,7 @@ $d=5$，10，30，60分に対してそれぞれ0.994，0.988，0.967，0.943で�
 \centering
 \includegraphics[width=\textwidth]{figures/figure1_fcomp60_heatmap.png}
 \caption{リージョン，インスタンスタイプ，時間帯別の$\Fcomp(60)$．
-括弧内は（60分間中断されなかった数/起動成功数）を示す．}
+括弧内は(60分間中断されなかった数/起動成功数)を示す．}
 \label{fig:heatmap}
 \end{figure*}
 
@@ -476,7 +476,7 @@ Singaporeのg4dn.xlargeではAfternoonが最も低かった．
 時刻$t$におけるリージョン$r$のローカル時間帯を$\pi=\pi(r,t)$と書く．
 
 実行条件$(r,\tau,\pi)$のもとで処理が完了する確率$p$は，
-式(\ref{eq:fcomp})の期限条件付き完了可能性そのものである．
+式（\ref{eq:fcomp}）の期限条件付き完了可能性そのものである．
 \begin{equation}
 p(r,\tau,\pi,d) = \Fcomp^{(r,\tau,\pi)}(d)
 \end{equation}
@@ -539,7 +539,7 @@ $\Delta=0$のとき$t=t_0$となり，選択できるのはリージョンとイ
 \subsection{決定手続き}
 \label{sec:procedure}
 
-式(\ref{eq:opt})は次の2段階で解く．
+式（\ref{eq:opt}）は次の2段階で解く．
 第1段階では，測定データから実行条件ごとの
 $p$，$\tilde{p}$，$\bar{u}$を算出し，表として保持する．
 条件数は48であり，表は小さい．
@@ -547,7 +547,7 @@ $p$，$\tilde{p}$，$\bar{u}$を算出し，表として保持する．
 損失時間が最小となる条件を選ぶ．
 
 \begin{table}[tb]
-\caption{到着時刻ごとの決定例（N.~Virginia，c6a.large，$d=60$分，$\Delta=6$時間）．
+\caption{到着時刻ごとの決定例(N.~Virginia，c6a.large，$d=60$分，$\Delta=6$時間)．
 到着時刻はUTC，$L$の単位は分，遅延の単位は時間．}
 \label{tab:decision}
 \centering
@@ -582,10 +582,10 @@ $p$，$\tilde{p}$，$\bar{u}$を算出し，表として保持する．
 
 本章の評価は，\ref{sec:result}章の測定データを用いたシミュレーションである．
 各戦略が選んだ実行条件に対し，測定データから求めた$p$と$\bar{u}$を用いて
-式(\ref{eq:loss})の損失時間を算出する．
+式（\ref{eq:loss}）の損失時間を算出する．
 実際にワークロードを実行して比較したものではない．
 
-式(\ref{eq:opt})の探索範囲を制限することで，次の4つの戦略を定義する．
+式（\ref{eq:opt}）の探索範囲を制限することで，次の4つの戦略を定義する．
 B0は到着時刻にそのまま実行する戦略であり，ベースラインとする．
 B1は実行開始時刻のみを選択する戦略，
 B2は待機せずにリージョンのみを選択する戦略，
@@ -599,7 +599,7 @@ B0とB1ではリージョンをN.~Virginiaに固定する．
 \label{sec:b1}
 
 \begin{table}[tb]
-\caption{許容遅延$\Delta$に対する損失時間（N.~Virginia，c6a.large，$d=60$分）}
+\caption{許容遅延$\Delta$に対する損失時間(N.~Virginia，c6a.large，$d=60$分)}
 \label{tab:b1}
 \centering
 \begin{tabular}{lrrrr}\hline\hline
@@ -622,7 +622,7 @@ $\Delta=6$時間のとき，実行開始時刻の選択により
 \label{sec:location}
 
 \begin{table}[tb]
-\caption{戦略ごとの損失時間（$d=60$分，$\Delta=6$時間）}
+\caption{戦略ごとの損失時間($d=60$分，$\Delta=6$時間)}
 \label{tab:strategies}
 \centering
 \begin{tabular}{llrr}\hline\hline
@@ -683,7 +683,7 @@ L_{\mathrm{split}}(k) = k\left(\frac{1}{p(T)}-1\right)\bar{u}(T) + k\,(s+c)
 
 \begin{table}[tb]
 \caption{分割数$k$とチェックポイントコスト$c$に対する総損失時間
-（$W=60$分，単位は分）}
+($W=60$分，単位は分)}
 \label{tab:split}
 \centering
 \setlength{\tabcolsep}{4pt}
@@ -771,9 +771,9 @@ AWSの4リージョン・3インスタンスタイプを対象に2期間計15日
 \begin{thebibliography}{99}
 
 \bibitem{AWSSpot}
-Amazon Web Services: Amazon EC2 Spot Instances (オンライン)，
+Amazon Web Services: Amazon EC2 Spot Instances(オンライン)，
 \urlj{https://aws.amazon.com/ec2/spot/}%
-\refdatej{2026-05}.
+\refdatej{2026-10-23}.
 
 \bibitem{Lin2022Survey}
 Lin, L., Pan, L. and Liu, S.:
@@ -784,12 +784,17 @@ Methods for Improving the Availability of Spot Instances: A Survey,
 Ramesh, D.G.A. and Lennon, R.G.:
 Evaluating the Impact of Reserved Instances vs. Spot Instances
 in DevOps Cloud Workflows,
-{\it Proc. 2025 35th Irish Signals and Systems Conference (ISSC)}, IEEE (2025).
+{\it Proc. 2025 35th Irish Signals and Systems Conference (ISSC)}, pp.1--7 (2025).
+
+\bibitem{AWSInterruptNotice}
+Amazon Web Services: Spot Instance Interruption Notices, Amazon EC2 User Guide(オンライン)，
+\urlj{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-instance-termination-notices.html}%
+\refdatej{2026-10-23}.
 
 \bibitem{AWSSPS}
-Amazon Web Services: Spot Placement Score, Amazon EC2 User Guide (オンライン)，
+Amazon Web Services: Spot Placement Score, Amazon EC2 User Guide(オンライン)，
 \urlj{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-placement-score.html}%
-\refdatej{2026-05}.
+\refdatej{2026-10-23}.
 
 \bibitem{Katayama2022}
 Katayama, D., Kasai, K. and Koita, T.:
@@ -797,16 +802,11 @@ Migration Destination Selection Algorithm for Spot Instances Using SPS,
 {\it Proc. 2022 IEEE International Conference on Big Data (Big Data)},
 pp.6690--6692 (2022).
 
-\bibitem{AWSInterruptNotice}
-Amazon Web Services: Spot Instance Interruption Notices, Amazon EC2 User Guide (オンライン)，
-\urlj{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-instance-termination-notices.html}%
-\refdatej{2026-10}.
-
 \bibitem{Garg2025}
 Garg, D., Kaata, S.K., Bhumireddy, D.R. and Bolla, B.K.:
 Reducing Cloud Cost Through Optimized Bidding for AWS Spot Instances,
 {\it Proc. 2025 3rd International Conference on Advances in Computation,
-Communication and Information Technology (ICAICCIT)}, IEEE (2025).
+Communication and Information Technology (ICAICCIT)}, pp.1--7 (2025).
 
 \bibitem{Kim2024SpotInterruption}
 Kim, K. and Lee, K.:
@@ -823,12 +823,12 @@ pp.242--255 (2022).
 Pham, T.-P., Ristov, S. and Fahringer, T.:
 Performance and Behavior Characterization of Amazon EC2 Spot Instances,
 {\it Proc. 2018 IEEE 11th International Conference on Cloud Computing (CLOUD)},
-IEEE (2018).
+pp.73--81 (2018).
 
 \bibitem{AWSInstanceTypes}
-Amazon Web Services: Amazon EC2 Instance Types, Amazon EC2 User Guide (オンライン)，
+Amazon Web Services: Amazon EC2 Instance Types, Amazon EC2 User Guide(オンライン)，
 \urlj{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html}%
-\refdatej{2026-05}.
+\refdatej{2026-10-23}.
 
 \bibitem{Wilson1927}
 Wilson, E.B.:
