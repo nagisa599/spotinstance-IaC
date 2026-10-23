@@ -19,7 +19,7 @@
 \begin{document}
 
 
-\title{スポットインスタンスにおける実測に基づく実行条件決定モデルの構築}
+\title{スポットインスタンスにおける実測に基づく\\実行条件決定モデルの構築}
 
 
 \affiliate{DU}{同志社大学}
@@ -348,11 +348,11 @@ EventBridgeのスケジュールにより起動用のLambda関数を毎時0分�
 \caption{対象インスタンスタイプ（価格は観測期間中の4リージョン平均スポット価格）}
 \label{tab:specs}
 \centering
-\begin{tabular}{llrrr}\hline\hline
-タイプ & 分類 & vCPU & メモリ & 価格 (USD/h)\\\hline
-c6a.large   & 計算最適化     & 2 & 4 GiB  & 0.039\\
-g4dn.xlarge & GPU（T4）搭載  & 4 & 16 GiB & 0.307\\
-t3.micro    & バースト可能   & 2 & 1 GiB  & 0.005\\\hline
+\begin{tabular}{llr}\hline\hline
+タイプ & 分類 & 価格 (USD/h)\\\hline
+c6a.large   & 計算最適化     & 0.039\\
+g4dn.xlarge & GPU（T4）搭載  & 0.307\\
+t3.micro    & バースト可能   & 0.005\\\hline
 \end{tabular}
 \end{table}
 
