@@ -1,0 +1,8 @@
+{
+  "name": "koita-ai-v2",
+  "version": "2.0.0",
+  "description": "論文原稿の添削スキル（paper-review）。体裁から主張の強さまでを決まった順で確認し，変更前／変更後の表で指摘する。根拠となる書籍・資料のページも示す。",
+  "author": {
+    "name": "Takahiro Koita"
+  }
+}
