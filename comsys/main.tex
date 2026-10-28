@@ -66,7 +66,7 @@ AWS上で2期間計15日間の測定を実施した．
 計算資源の利用コストは多くの利用者にとって重要な課題となっている．
 コストを削減する手段の一つにスポットインスタンスがある\cite{AWSSpot}．
 スポットインスタンスは，クラウドプロバイダの余剰計算資源を低価格で提供する料金モデルであり，
-オンデマンドインスタンスと比較して最大約90\%の割引価格で利用できる\cite{Lin2022Survey}．
+オンデマンドインスタンスと比較して最大約90\%の割引価格で利用できる．
 この価格優位性から，機械学習やバッチ処理に加え，
 CI/CDにおける自動ビルドやテストのように
 一時的に計算資源を必要とするワークロードにも利用されている\cite{Ramesh2025}．
@@ -74,9 +74,8 @@ CI/CDにおける自動ビルドやテストのように
 \subsection{スポットインスタンスの中断}
 
 スポットインスタンスは余剰容量に基づいて提供されるため，
-利用者の都合とは無関係に中断されうる．
 需要の増加や利用可能な容量の減少が生じると，
-プロバイダは稼働中のインスタンスを回収する．
+プロバイダは稼働中のインスタンスを利用者の都合とは無関係に回収する．
 本稿ではこれを中断と呼ぶ．
 AWSでは中断の約2分前に，
 警告がAmazon EventBridgeのイベントおよびインスタンスメタデータとして通知される\cite{AWSInterruptNotice}．
@@ -100,7 +99,7 @@ AWSでは中断の約2分前に，
 これらの困難は，CI/CDのビルドやテスト，短時間のバッチ処理のような
 短時間ワークロードにおいて特に問題となる．
 こうしたワークロードは実行時間こそ短いものの，
-完了前に中断されればジョブ全体をやり直す必要があり，
+完了前に中断されればジョブ全体を再実行する必要があり，
 中断のたびに実行時間と費用が積み重なる．
 したがって利用者にとって重要なのは，
 どのリージョン，インスタンスタイプ，実行時刻で実行すれば
@@ -123,7 +122,7 @@ SPSはリージョン単位またはアベイラビリティゾーン単位で�
 本研究ではこの違いを，
 \textbf{起動のしやすさ}と\textbf{起動後の継続性}の区別として扱う．
 
-\subsection{本研究の目的}
+\subsection{本研究の目的と貢献}
 
 以上を踏まえ，本研究では，プロバイダ固有の指標に依存せず，
 自ら測定した起動・中断の記録のみに基づいて実行条件を決定するモデルを提案する．
@@ -212,8 +211,9 @@ SPSには，リクエスト時に記録した値を用いる．
 $\Fcomp(d)$と書く（\ref{sec:measure}章で定義する）．
 
 観測されたSPSは，インスタンスタイプごとにほぼ一定の値をとった．
-c6a.largeでは起動リクエスト768件の90\%が3，g4dn.xlargeでは同じく57\%が9であり，
-それ以外の大部分は1であった．
+各タイプの起動リクエストは768件であり，
+SPSはc6a.largeではその90\%で3，g4dn.xlargeでは57\%で9であった．
+いずれのタイプでも，それ以外の大部分は1であった．
 そこで各タイプで最も多く観測された値を通常値とし，
 SPSが通常値を下回った場合を\textbf{SPS低下}とする．
 t3.microはSPSがほぼ常に3であり，中断も1件のみであったため，分析から除く．
@@ -466,7 +466,7 @@ Singaporeのg4dn.xlargeではAfternoonが最も低かった．
 中断されたジョブは再実行されるため，
 利用者が要する総時間は本来の処理時間を上回る．
 本稿ではこの超過分を\textbf{損失時間}と呼び，モデルの最小化対象とする．
-損失時間は，やり直す回数と，1回あたりの中断までに費やした時間の積として表される．
+損失時間は，再実行回数と，1回あたりの中断までに費やした時間の積として表される．
 前者は実行条件の中断されにくさによって決まり，
 後者は中断が発生するまでの経過時間によって決まる．
 
@@ -482,7 +482,7 @@ p(r,\tau,\pi,d) = \Fcomp^{(r,\tau,\pi)}(d)
 \end{equation}
 各試行が独立であると仮定すると，
 成功するまでの試行回数は幾何分布に従い，その期待値は$1/p$である．
-したがって，やり直す回数の期待値は$1/p-1$となる．
+したがって，再実行回数の期待値は$1/p-1$となる．
 また，中断された試行で費やされた時間の期待値を
 \begin{equation}
 \bar{u}(r,\tau,\pi,d) = \mathrm{E}\left[\,U \mid U<d\,\right]
@@ -728,11 +728,6 @@ Amazon Web Services: Amazon EC2 Spot Instances(オンライン)，
 \urlj{https://aws.amazon.com/ec2/spot/}%
 \refdatej{2026-10-23}.
 
-\bibitem{Lin2022Survey}
-Lin, L., Pan, L. and Liu, S.:
-Methods for Improving the Availability of Spot Instances: A Survey,
-{\it Computers in Industry}, Vol.141, p.103718 (2022).
-
 \bibitem{Ramesh2025}
 Ramesh, D.G.A. and Lennon, R.G.:
 Evaluating the Impact of Reserved Instances vs. Spot Instances
@@ -754,6 +749,11 @@ Katayama, D., Kasai, K. and Koita, T.:
 Migration Destination Selection Algorithm for Spot Instances Using SPS,
 {\it Proc. 2022 IEEE International Conference on Big Data (Big Data)},
 pp.6690--6692 (2022).
+
+\bibitem{Lin2022Survey}
+Lin, L., Pan, L. and Liu, S.:
+Methods for Improving the Availability of Spot Instances: A Survey,
+{\it Computers in Industry}, Vol.141, p.103718 (2022).
 
 \bibitem{Garg2025}
 Garg, D., Kaata, S.K., Bhumireddy, D.R. and Bolla, B.K.:
